@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADA · 智能经营分析 Agent — 作品集</title>
+<style>
+  :root{
+    --ink:#1a1d24; --sub:#5c6370; --line:#e8e6e1;
+    --accent:#0f6b5c; --accent-soft:#eef4f2;
+    --bg:#faf9f7; --card:#ffffff;
+    --serif:"Noto Serif SC","Songti SC",serif;
+    --sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 32px;}
+
+  /* Hero */
+  header{background:linear-gradient(160deg,#12241f 0%,#0f3b32 60%,#0f6b5c 130%);color:#f4f2ec;padding:96px 0 72px;}
+  .kicker{font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#9fc4ba;margin-bottom:22px;}
+  h1{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1.3;margin-bottom:18px;}
+  h1 em{font-style:normal;color:#7fd6c2;}
+  .lede{font-size:17px;color:#cfd9d4;max-width:640px;margin-bottom:34px;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;}
+  .meta span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 14px;color:#e4eae7;}
+
+  /* Sections */
+  section{padding:64px 0 8px;}
+  .sec-tag{font-size:12px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;margin-bottom:10px;}
+  h2{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:28px;}
+  h2 small{font-family:var(--sans);font-size:14px;color:var(--sub);font-weight:400;margin-left:12px;}
+
+  /* Cards & grids */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;}
+  .card h3{font-size:16px;margin-bottom:10px;}
+  .card p{font-size:14px;color:var(--sub);}
+  .card .no{font-family:var(--serif);font-size:13px;color:var(--accent);letter-spacing:.15em;display:block;margin-bottom:12px;}
+  .card.hl{border-color:var(--accent);background:var(--accent-soft);}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:40px;}
+  th{background:#f2f0ec;text-align:left;padding:13px 18px;font-weight:600;font-size:13px;color:#3c4048;}
+  td{padding:13px 18px;border-top:1px solid var(--line);color:#3c4048;vertical-align:top;}
+  td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+
+  ul.list{list-style:none;margin-bottom:40px;}
+  ul.list li{position:relative;padding:10px 0 10px 26px;font-size:15px;color:#33373e;border-bottom:1px dashed var(--line);}
+  ul.list li::before{content:"";position:absolute;left:4px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  ul.list b{color:var(--ink);}
+
+  .layers{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .layer{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;position:relative;}
+  .layer+.layer{margin-top:14px;}
+  .layer .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 10px;margin-bottom:8px;}
+  .layer h3{font-size:16px;margin-bottom:6px;}
+  .layer p{font-size:14px;color:var(--sub);}
+  .layer.core{border-color:var(--accent);background:var(--accent-soft);}
+
+  .quote{font-family:var(--serif);font-size:18px;line-height:1.9;color:#2a2e35;border-left:3px solid var(--accent);padding:6px 0 6px 22px;margin:0 0 40px;}
+
+  footer{margin-top:48px;border-top:1px solid var(--line);padding:36px 0 64px;font-size:13px;color:var(--sub);}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
+  .chips span{font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;color:#3c4048;}
+  @media(max-width:720px){.grid3,.grid2{grid-template-columns:1fr;}h1{font-size:34px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Portfolio · AI Data Product</div>
+    <h1>ADA — 智能经营分析 Agent<br><em>把「分析师 + 业务参谋」装进一个对话入口</em></h1>
+    <p class="lede">面向共享出行业务的智能经营分析助手：运营和管理者用一句自然语言提问，即可完成数据查询、异动归因、目标诊断与复盘报告。从 0 到 1 建设、上线并持续迭代的真实生产环境 Agent。</p>
+    <div class="meta">
+      <span>角色 · 创建者 / 产品与架构设计</span>
+      <span>平台 · 企业级 Agent 平台</span>
+      <span>用户 · 区域运营 / 商业分析 / 管理层</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="sec-tag">01 · Problem</div>
+    <h2>解决什么问题</h2>
+    <div class="grid3">
+      <div class="card"><span class="no">PAIN 01</span><h3>取数低效</h3><p>经营数据散落在多个看板、数仓与目标系统，一次完整分析需人工切换拼表 2–4 小时。</p></div>
+      <div class="card"><span class="no">PAIN 02</span><h3>归因靠个人经验</h3><p>同一个"订单为什么降"，不同分析师结论差异大，质量取决于"是谁写的"而非"方法论是否正确"。</p></div>
+      <div class="card"><span class="no">PAIN 03</span><h3>响应滞后</h3><p>发现问题 → 找分析师 → 人工排查，链路通常 T+1 起，无法支撑及时经营决策。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-tag">02 · Architecture</div>
+    <h2>分层能力设计<small>按「解决什么问题」递进建设</small></h2>
+    <div class="layers">
+      <div class="layer"><span class="tag">L1 · 去哪看</span><h3>数据查询层</h3><p>自然语言查数：意图识别（指标 × 时间 × 区域）→ 自动路由到正确数据源（业务看板 / SQL / 指标平台），模糊问法主动追问而非猜测。</p></div>
+      <div class="layer core"><span class="tag">L2 · 为什么（核心亮点）</span><h3>分析诊断层</h3><p>异动检测 + 多维归因引擎：排除法 + 连环替代法，每个因素量化贡献度（如「天气贡献 -5.2pp」），输出结构化归因报告。</p></div>
+      <div class="layer"><span class="tag">L3 · 怎么办</span><h3>决策支持层</h3><p>月度预测、节假日保障、目标拆解（大区→城市）、周/月复盘报告自动生成，形成分析闭环。</p></div>
+    </div>
+    <p style="font-size:14px;color:var(--sub);margin:-16px 0 40px;">架构模式：复用平台原生的 Skill 发现与匹配机制（非自建 Router），自定义业务 Skill 作为方法论增强层，与取数、文档、可视化等通用 Skill 协同编排。</p>
+  </section>
+
+  <section>
+    <div class="sec-tag">03 · Features</div>
+    <h2>核心功能点</h2>
+    <table>
+      <tr><th style="width:150px;">能力</th><th>设计要点</th></tr>
+      <tr><td>统一指标查询</td><td>单指标 / 多指标 / 跨对象对比 / 目标达成查询；每个数值标注来源，可回溯验证</td></tr>
+      <tr><td>异动归因引擎 ★</td><td>「先外后内、先大后小」：外部因素（天气/节假日）优先排除 → 供给侧 → 需求侧；拒绝模糊结论，必须量化到 pp 级贡献</td></tr>
+      <tr><td>目标管理</td><td>实际值与目标值分源获取、MTD 达成率、Gap 定位；目标按供给/天气/竞争因子拆解到城市</td></tr>
+      <tr><td>报告自动化</td><td>周/月复盘报告自动生成并发布到内部知识库，复用成熟预测与复盘管线</td></tr>
+      <tr><td>分层交互</td><td>群聊：结论先行、限长、高密级数据不展示明细；私聊：完整报告 + 多轮追问</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-tag">04 · Quality & Eval</div>
+    <h2>质量与评测体系<small>用户敢用的前提是它不出错</small></h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>六维评测框架</h3>
+        <p>数据查询准确性 25% · 异动归因质量 25% · 业务知识 15% · 安全合规 15% · 输出规范 10% · 交互体验 10%。每个 case 5 分制，加权 ≥3.5 合格；配套含负样本（如"未达异动阈值不应误判"）的标准测试集。</p>
+      </div>
+      <div class="card hl">
+        <h3>专家基准评测</h3>
+        <p>以<b>历史周会上专家人工识别并归因过的异动案例</b>作为 ground truth 构建评测集：让 Agent 对同一批历史异动独立跑归因，用「与专家历史结论的一致性」度量准确率——标尺来自业务专家，而非模型自评。</p>
+      </div>
+    </div>
+    <ul class="list">
+      <li><b>口径一致性铁律</b>：订单 ↔ 收入 ↔ 客单价互为约束，修正任一变量必须重算整个三角并三方校验</li>
+      <li><b>幻觉兜底</b>：生成端与验证端不共用同一假设，结论用独立数据源交叉验证；规律用同年实测验证而非模型假设</li>
+      <li><b>诚实边界</b>：竞对、政策等无法量化的因素如实说明，不强行凑解释；数据不确定时明说"我不确定"</li>
+      <li><b>安全红线</b>：不编造数据、不执行写操作、不访问越权数据、拒绝提示词注入</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-tag">05 · Agent Engineering</div>
+    <h2>Agent 工程细节</h2>
+    <div class="grid3">
+      <div class="card"><h3>身份与边界</h3><p>三文件身份体系（身份 / 工作区规范 / 输出人格），能力白名单 + 「不能做的事」明示，不替代人做决策。</p></div>
+      <div class="card"><h3>记忆分层</h3><p>长期记忆（容量治理）+ 每日记录 + 跨会话检索三层结构，用户偏好与业务口径主动沉淀。</p></div>
+      <div class="card"><h3>Skill 工程化</h3><p>自包含 description、触发词与负样本声明、Fallback 路径、发布校验——保证路由精准与可维护性。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-tag">06 · Results</div>
+    <h2>验证与成果</h2>
+    <ul class="list">
+      <li>从 0 到 1 建设并上线企业 Agent 平台，覆盖四个业务区域 + 商业分析 + 管理层真实使用</li>
+      <li>公司内部 Agent 实战大赛（11 支战队、三轮限时实战）中，归因路径获评委认可：<b>「用大盘对照砍掉季节性噪音，只留真凶」</b></li>
+      <li>项目目标（MRD 设定，规模化验证中）：单次经营分析 2–4 小时 → 5 分钟内；分析覆盖从头部 10 余城扩展到全量 100+ 城市</li>
+    </ul>
+    <div class="quote">"指标异动了，Agent 告诉你原因是什么、各因素分别贡献了多少——<br>归因给出量化拆解，业务判断留给人。"</div>
+  </section>
+
+  <section>
+    <div class="sec-tag">07 · Capability Map</div>
+    <h2>能力标签</h2>
+    <div class="chips">
+      <span>分层需求设计</span><span>意图路由与工具编排</span><span>归因方法论产品化</span><span>评测集构建（专家 Ground Truth）</span><span>幻觉兜底与质量回归</span><span>个性化 vs 规模化取舍</span><span>数据安全与密级分层</span><span>0→1 上线与真实用户迭代</span><span>SQL / Python 自助验证</span>
+    </div>
+  </section>
+
+  <footer>
+    ADA · 智能经营分析 Agent 作品集 — 脱敏外发版 ｜ 内部平台与数据细节已做泛化处理
+  </footer>
+
+</main>
+</body>
+</html>
