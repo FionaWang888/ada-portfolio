@@ -238,17 +238,15 @@
 
   <section>
     <div class="sec-tag">05 · Benchmark</div>
-    <h2>对标业界头部 Agent 产品<small>同样的能力方向，垂直场景做得更深</small></h2>
-    <table>
-      <tr><th style="width:190px;">业界标杆</th><th>业界做到了什么</th><th>ADA 的对位与差异</th></tr>
-      <tr><td>Databricks Genie / Snowflake Cortex Analyst</td><td>对话式数析标杆：自然语言自助取数、语义层护住口径</td><td>ADA 同样实现「一句话取数」，并用<b>因果图谱硬编码口径</b>，工具成功率 99.5%、数值必标来源，比语义层方案更轻更可控</td></tr>
-      <tr><td>Tableau Pulse / 瓴羊智能归因</td><td>BI 大厂的自动洞察：波动提醒 + 维度下钻式归因</td><td>ADA 不止于下钻：<b>排除法 + 连环替代法因果量化到 pp 级</b>，5 条推理规则硬约束，专家 ground truth 评测一致率 <b>92%</b>——把「描述波动」升级为「定位原因」</td></tr>
-      <tr><td>Manus / Devin 等通用 Agent</td><td>展示了 Agent 自主完成端到端任务的可能性</td><td>ADA 证明同一范式在<b>垂直经营场景的生产级落地</b>：月度预测全流程一句话触发、2–3 天手工流程 → 分钟级，通用方案尚少有人做到线上稳定运行</td></tr>
-      <tr><td>Letta（MemGPT）/ LangGraph Memory</td><td>Agent 记忆分层与长期记忆管理的前沿探索</td><td>ADA 走得更落地：<b>「记忆 → Skill」自迭代闭环</b>，好经验经蒸馏验证后版本化发布为技能，13 个业务 Skill 已发布企业技能广场</td></tr>
-      <tr><td>AutoGen / CrewAI 多智能体框架</td><td>多 Agent 协作编排的开源范式</td><td>ADA 用「Skill 干确定性活 + Agent 编排链路 + 人审核结论」的分工模式，避开多 Agent 互传幻觉，三条业务链路<b>日稳定运行</b></td></tr>
-      <tr><td>RAG 类知识问答（主流 ChatBI 通用做法）</td><td>向量检索拼凑上下文，知识碎片化、不可版本化</td><td>ADA <b>弃纯 RAG</b>：原始资料 → Wiki → Schema 三层编译，Ingest/Query/Lint 让知识可版本化、复利增长</td></tr>
-    </table>
-    <p class="note" style="margin-bottom:24px;">业界头部产品验证了方向，但多数停在通用能力层；ADA 的差异化在于：把「确定性引擎 + 可治理知识 + 可验证评测」这套组合在真实生产环境跑通，并拿出 92% 归因一致率、99.5% 工具成功率、100% 对话成功率的可验证数据。</p>
+    <h2>站在业界肩膀上，做得更落地<small>参考 Genie / Tableau Pulse / Manus / Letta 等头部 Agent 的设计范式</small></h2>
+    <p class="note" style="margin-bottom:14px;">设计上参考了 Databricks Genie、Tableau Pulse、Manus、Letta（MemGPT）、AutoGen 等业界头部 Agent，但不照搬——针对骑行业务「口径乱、归因靠经验、流程靠人工」的真实痛点，做了五件更落地的事：</p>
+    <ul class="list">
+      <li><b>① 用「因果图谱 + 接口取数」替代业界主流的 NL2SQL</b>——指标口径硬编码在图谱里（200 节点 / 500 边），数值必标来源可回溯，工具成功率 99.5%，规避 ChatBI 类产品普遍的幻觉与难溯源问题</li>
+      <li><b>② 把 BI 产品的「维度下钻式归因」升级为因果量化引擎</b>——排除法 + 连环替代法，贡献量化到 pp 级，5 条推理规则硬约束，专家基准评测一致率 92%</li>
+      <li><b>③ 借鉴 Manus / Devin 的端到端编排，落到生产级</b>——月度预测全流程一句话触发，取数到目标上传 2–3 天手工流程 → 分钟级，MAPE&lt;5%</li>
+      <li><b>④ 借鉴 Letta（MemGPT）记忆分层并更进一步</b>——「记忆 → Skill」自迭代闭环，好经验蒸馏验证后版本化发布为技能，13 个业务 Skill 已发布企业技能广场</li>
+      <li><b>⑤ 借鉴 AutoGen / CrewAI 多智能体但避开互传幻觉</b>——Skill 干确定性活 + Agent 编排链路 + 人审核结论，三条业务链路日稳定运行</li>
+    </ul>
     <h3 style="margin-bottom:8px;">正在引入的业界设计（Roadmap）</h3>
     <div class="steps4" style="margin-bottom:10px;">
       <div class="step"><span class="no">借鉴 Cortex Analyst 语义层</span><h3>指标语义模型开放</h3><p>因果图谱升级为可复用语义层，其他 Agent、看板、报表直接调用同一套口径，一次治理全网受益</p></div>
