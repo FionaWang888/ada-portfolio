@@ -237,7 +237,22 @@
   </section>
 
   <section>
-    <div class="sec-tag">05 · Quality & Eval</div>
+    <div class="sec-tag">05 · Benchmark</div>
+    <h2>对标行业最佳实践<small>主流方案的短板，正是设计切入点</small></h2>
+    <table>
+      <tr><th style="width:96px;">维度</th><th>行业常见做法</th><th>ADA 的做法</th></tr>
+      <tr><td>取数</td><td>ChatBI / NL2SQL 直连大模型生成 SQL，准确率受幻觉制约，数值难溯源</td><td><b>意图路由 + 确定性接口取数</b>，数值必标来源可回溯，工具成功率 99.5%</td></tr>
+      <tr><td>归因</td><td>大模型自由发挥的「描述性解释」，无量化、无验证、每次结论不一致</td><td><b>确定性归因引擎</b>：排除法 + 连环替代法量化到 pp 级，5 条推理规则硬约束，专家 ground truth 评测<b>一致率 92%</b></td></tr>
+      <tr><td>知识管理</td><td>主流 RAG 向量检索：知识碎片化、不可版本化、越用越乱</td><td><b>弃纯 RAG</b>，三层编译架构（原始资料→Wiki→Schema），Ingest/Query/Lint 让知识可版本化、复利增长</td></tr>
+      <tr><td>指标治理</td><td>口径散落在文档与个人经验里，口径打架无人认领</td><td>对标指标中台治理：因果图谱 200 节点 / 500 边，9 模块 Owner 分权，版本快照回滚，<b>AI 零写入</b></td></tr>
+      <tr><td>自迭代</td><td>Agent 上线后靠人工改 prompt，经验不沉淀</td><td><b>「记忆 → Skill」自迭代闭环</b>：候选沉淀 → 定时蒸馏 → 验证审核 → 版本化发布，好经验自动变能力</td></tr>
+      <tr><td>人机边界</td><td>两个极端：要么全自动不可信，要么全人工没效率</td><td>人定义问题与验收标准，Skill 干确定性活，Agent 编排链路，<b>结论由人审核</b>——可信与效率兼得</td></tr>
+    </table>
+    <p class="note" style="margin-bottom:24px;">这一套「确定性引擎 + 可治理知识 + 可验证评测」的组合，是目前业内对话式 BI 产品普遍未解决的三大难题。</p>
+  </section>
+
+  <section>
+    <div class="sec-tag">06 · Quality & Eval</div>
     <h2>质量与评测</h2>
     <div class="grid2">
       <div class="card hl">
@@ -252,7 +267,7 @@
   </section>
 
   <section>
-    <div class="sec-tag">06 · Results</div>
+    <div class="sec-tag">07 · Results</div>
     <h2>验证与成果</h2>
     <ul class="list">
       <li><b>0→1 上线</b>企业 Agent 平台，覆盖四个业务区域 + 商分 + 管理层：<b>日活用户 50+、工具调用累计破万</b>、近 7 天对话 500+ 次成功率 100%、归因一致率 92%</li>
@@ -263,7 +278,7 @@
   </section>
 
   <section>
-    <div class="sec-tag">07 · Capability Map</div>
+    <div class="sec-tag">08 · Capability Map</div>
     <h2>能力标签</h2>
     <div class="chips">
       <span>分层需求设计</span><span>指标因果图谱构建</span><span>知识协同治理</span><span>意图路由与工具编排</span><span>归因方法论产品化</span><span>评测集构建（专家 Ground Truth）</span><span>幻觉兜底与质量回归</span><span>个性化 vs 规模化取舍</span><span>0→1 上线迭代</span>
