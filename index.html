@@ -238,17 +238,17 @@
 
   <section>
     <div class="sec-tag">05 · Benchmark</div>
-    <h2>对标行业最佳实践<small>主流方案的短板，正是设计切入点</small></h2>
+    <h2>对标业界头部 Agent 产品<small>同样的能力方向，垂直场景做得更深</small></h2>
     <table>
-      <tr><th style="width:96px;">维度</th><th>行业常见做法</th><th>ADA 的做法</th></tr>
-      <tr><td>取数</td><td>ChatBI / NL2SQL 直连大模型生成 SQL，准确率受幻觉制约，数值难溯源</td><td><b>意图路由 + 确定性接口取数</b>，数值必标来源可回溯，工具成功率 99.5%</td></tr>
-      <tr><td>归因</td><td>大模型自由发挥的「描述性解释」，无量化、无验证、每次结论不一致</td><td><b>确定性归因引擎</b>：排除法 + 连环替代法量化到 pp 级，5 条推理规则硬约束，专家 ground truth 评测<b>一致率 92%</b></td></tr>
-      <tr><td>知识管理</td><td>主流 RAG 向量检索：知识碎片化、不可版本化、越用越乱</td><td><b>弃纯 RAG</b>，三层编译架构（原始资料→Wiki→Schema），Ingest/Query/Lint 让知识可版本化、复利增长</td></tr>
-      <tr><td>指标治理</td><td>口径散落在文档与个人经验里，口径打架无人认领</td><td>对标指标中台治理：因果图谱 200 节点 / 500 边，9 模块 Owner 分权，版本快照回滚，<b>AI 零写入</b></td></tr>
-      <tr><td>自迭代</td><td>Agent 上线后靠人工改 prompt，经验不沉淀</td><td><b>「记忆 → Skill」自迭代闭环</b>：候选沉淀 → 定时蒸馏 → 验证审核 → 版本化发布，好经验自动变能力</td></tr>
-      <tr><td>人机边界</td><td>两个极端：要么全自动不可信，要么全人工没效率</td><td>人定义问题与验收标准，Skill 干确定性活，Agent 编排链路，<b>结论由人审核</b>——可信与效率兼得</td></tr>
+      <tr><th style="width:190px;">业界标杆</th><th>业界做到了什么</th><th>ADA 的对位与差异</th></tr>
+      <tr><td>Databricks Genie / Snowflake Cortex Analyst</td><td>对话式数析标杆：自然语言自助取数、语义层护住口径</td><td>ADA 同样实现「一句话取数」，并用<b>因果图谱硬编码口径</b>，工具成功率 99.5%、数值必标来源，比语义层方案更轻更可控</td></tr>
+      <tr><td>Tableau Pulse / 瓴羊智能归因</td><td>BI 大厂的自动洞察：波动提醒 + 维度下钻式归因</td><td>ADA 不止于下钻：<b>排除法 + 连环替代法因果量化到 pp 级</b>，5 条推理规则硬约束，专家 ground truth 评测一致率 <b>92%</b>——把「描述波动」升级为「定位原因」</td></tr>
+      <tr><td>Manus / Devin 等通用 Agent</td><td>展示了 Agent 自主完成端到端任务的可能性</td><td>ADA 证明同一范式在<b>垂直经营场景的生产级落地</b>：月度预测全流程一句话触发、2–3 天手工流程 → 分钟级，通用方案尚少有人做到线上稳定运行</td></tr>
+      <tr><td>Letta（MemGPT）/ LangGraph Memory</td><td>Agent 记忆分层与长期记忆管理的前沿探索</td><td>ADA 走得更落地：<b>「记忆 → Skill」自迭代闭环</b>，好经验经蒸馏验证后版本化发布为技能，13 个业务 Skill 已发布企业技能广场</td></tr>
+      <tr><td>AutoGen / CrewAI 多智能体框架</td><td>多 Agent 协作编排的开源范式</td><td>ADA 用「Skill 干确定性活 + Agent 编排链路 + 人审核结论」的分工模式，避开多 Agent 互传幻觉，三条业务链路<b>日稳定运行</b></td></tr>
+      <tr><td>RAG 类知识问答（主流 ChatBI 通用做法）</td><td>向量检索拼凑上下文，知识碎片化、不可版本化</td><td>ADA <b>弃纯 RAG</b>：原始资料 → Wiki → Schema 三层编译，Ingest/Query/Lint 让知识可版本化、复利增长</td></tr>
     </table>
-    <p class="note" style="margin-bottom:24px;">这一套「确定性引擎 + 可治理知识 + 可验证评测」的组合，是目前业内对话式 BI 产品普遍未解决的三大难题。</p>
+    <p class="note" style="margin-bottom:24px;">业界头部产品验证了方向，但多数停在通用能力层；ADA 的差异化在于：把「确定性引擎 + 可治理知识 + 可验证评测」这套组合在真实生产环境跑通，并拿出 92% 归因一致率、99.5% 工具成功率、100% 对话成功率的可验证数据。</p>
   </section>
 
   <section>
