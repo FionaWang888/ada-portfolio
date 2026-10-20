@@ -13,63 +13,79 @@
     --sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:860px;margin:0 auto;padding:0 32px;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px;}
 
-  header{background:linear-gradient(160deg,#12241f 0%,#0f3b32 60%,#0f6b5c 130%);color:#f4f2ec;padding:96px 0 72px;}
-  .kicker{font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#9fc4ba;margin-bottom:22px;}
-  h1{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1.3;margin-bottom:18px;}
+  header{background:linear-gradient(160deg,#12241f 0%,#0f3b32 60%,#0f6b5c 130%);color:#f4f2ec;padding:64px 0 52px;}
+  .kicker{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:#9fc4ba;margin-bottom:16px;}
+  h1{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1.3;margin-bottom:14px;}
   h1 em{font-style:normal;color:#7fd6c2;}
-  .lede{font-size:17px;color:#cfd9d4;max-width:640px;margin-bottom:34px;}
-  .meta{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;}
-  .meta span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 14px;color:#e4eae7;}
+  .lede{font-size:15.5px;color:#cfd9d4;max-width:660px;margin-bottom:24px;}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;}
+  .meta span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 13px;color:#e4eae7;}
 
-  section{padding:64px 0 8px;}
-  .sec-tag{font-size:12px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;margin-bottom:10px;}
-  h2{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:24px;}
-  h2 small{font-family:var(--sans);font-size:14px;color:var(--sub);font-weight:400;margin-left:12px;}
-  h3{font-size:16px;margin-bottom:10px;}
-  p{font-size:15px;color:#3c4048;}
-  .note{font-size:13px;color:var(--sub);}
+  section{padding:42px 0 6px;}
+  .sec-tag{font-size:11.5px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;margin-bottom:6px;}
+  h2{font-family:var(--serif);font-size:23px;font-weight:600;margin-bottom:20px;}
+  h2 small{font-family:var(--sans);font-size:13.5px;color:var(--sub);font-weight:400;margin-left:10px;}
+  h3{font-size:15px;margin-bottom:8px;}
+  .note{font-size:12.5px;color:var(--sub);}
 
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;}
-  .card p{font-size:14px;color:var(--sub);}
-  .card .no{font-family:var(--serif);font-size:13px;color:var(--accent);letter-spacing:.15em;display:block;margin-bottom:12px;}
-  .card.hl{border-color:var(--accent);background:var(--accent-soft);}
+  /* metrics */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px;}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .metric .v{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--accent);}
+  .metric .k{font-size:12px;color:var(--sub);margin-top:2px;}
 
-  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px;}
-  th{background:#f2f0ec;text-align:left;padding:13px 18px;font-weight:600;font-size:13px;color:#3c4048;}
-  td{padding:13px 18px;border-top:1px solid var(--line);color:#3c4048;vertical-align:top;}
+  /* feature table */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;}
+  th{background:#f2f0ec;text-align:left;padding:10px 16px;font-weight:600;font-size:12.5px;color:#3c4048;}
+  td{padding:10px 16px;border-top:1px solid var(--line);color:#3c4048;vertical-align:top;}
   td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
 
-  ul.list{list-style:none;margin-bottom:40px;}
-  ul.list li{position:relative;padding:10px 0 10px 26px;font-size:15px;color:#33373e;border-bottom:1px dashed var(--line);}
-  ul.list li::before{content:"";position:absolute;left:4px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  /* demo chat */
+  .demo{background:#10221d;border-radius:16px;padding:22px;margin-bottom:10px;color:#e8efec;}
+  .demo-bar{display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:12px;color:#8fb5aa;}
+  .demo-bar i{width:9px;height:9px;border-radius:50%;background:#2e5a4f;display:inline-block;}
+  .demo-bar i:first-child{background:#7fd6c2;}
+  .msg{max-width:82%;padding:10px 15px;border-radius:12px;font-size:13.5px;margin-bottom:12px;line-height:1.65;}
+  .msg.user{background:#1d4238;margin-left:auto;border-bottom-right-radius:4px;}
+  .msg.bot{background:#f4f2ec;color:#1a1d24;border-bottom-left-radius:4px;}
+  .msg .who{font-size:11px;color:#8aa39b;display:block;margin-bottom:3px;}
+  .msg.bot .who{color:#0f6b5c;font-weight:600;}
+  .verdict{font-size:13.5px;margin-bottom:8px;}
+  .verdict b{color:#0f6b5c;}
+  .mini-table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0;}
+  .mini-table th{background:#ece9e3;padding:6px 10px;font-size:11.5px;color:#5c6370;}
+  .mini-table td{padding:6px 10px;border-top:1px solid #e2ded6;color:#33373e;}
+  .src{font-size:11.5px;color:#8a938e;}
+  .demo-tag{text-align:center;font-size:12px;color:var(--sub);margin-bottom:36px;}
+
+  /* pipeline steps compact */
+  .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px;}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px;position:relative;}
+  .step.core{border-color:var(--accent);background:var(--accent-soft);}
+  .step .no{font-family:var(--serif);font-size:12px;color:var(--accent);letter-spacing:.12em;display:block;margin-bottom:6px;}
+  .step h3{font-size:13.5px;margin-bottom:5px;line-height:1.4;}
+  .step p{font-size:12.5px;color:var(--sub);line-height:1.6;}
+  .arch{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;}
+  .arch .step p b{color:var(--accent);}
+
+  ul.list{list-style:none;margin-bottom:24px;}
+  ul.list li{position:relative;padding:7px 0 7px 22px;font-size:14px;color:#33373e;border-bottom:1px dashed var(--line);}
+  ul.list li::before{content:"";position:absolute;left:3px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
   ul.list b{color:var(--ink);}
 
-  .steps{counter-reset:step;margin-bottom:40px;}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;position:relative;}
-  .step+.step{margin-top:14px;}
-  .step .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 10px;margin-bottom:8px;}
-  .step p{font-size:14px;color:var(--sub);}
-  .step.core{border-color:var(--accent);background:var(--accent-soft);}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+  .chips span{font-size:12.5px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 14px;color:#3c4048;}
 
-  /* metrics band */
-  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px;}
-  .metric{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px;text-align:left;}
-  .metric .v{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--accent);}
-  .metric .k{font-size:12.5px;color:var(--sub);margin-top:4px;}
-  .metrics-note{font-size:12.5px;color:var(--sub);margin-bottom:40px;}
-
-  .quote{font-family:var(--serif);font-size:18px;line-height:1.9;color:#2a2e35;border-left:3px solid var(--accent);padding:6px 0 6px 22px;margin:0 0 40px;}
-
-  footer{margin-top:48px;border-top:1px solid var(--line);padding:36px 0 64px;font-size:13px;color:var(--sub);}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
-  .chips span{font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;color:#3c4048;}
-  @media(max-width:720px){.grid3,.grid2,.metrics{grid-template-columns:1fr 1fr;}h1{font-size:34px;}}
-  @media(max-width:480px){.grid3,.grid2,.metrics{grid-template-columns:1fr;}}
+  footer{border-top:1px solid var(--line);padding:26px 0 50px;font-size:12.5px;color:var(--sub);}
+  @media(max-width:720px){.grid2,.steps4,.arch{grid-template-columns:1fr 1fr;}.metrics{grid-template-columns:1fr 1fr;}h1{font-size:30px;}}
+  @media(max-width:480px){.steps4,.arch{grid-template-columns:1fr;}}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card.hl{border-color:var(--accent);background:var(--accent-soft);}
+  .card p{font-size:13px;color:var(--sub);line-height:1.65;}
 </style>
 </head>
 <body>
@@ -77,8 +93,8 @@
 <header>
   <div class="wrap">
     <div class="kicker">Portfolio · AI Data Product</div>
-    <h1>ADA — 智能经营分析 Agent<br><em>查数据、找异动、做归因、出报告</em></h1>
-    <p class="lede">面向共享出行业务的智能经营分析助手。运营和管理者一句自然语言提问，ADA 完成数据查询、异动归因、目标诊断与复盘报告。已在企业 Agent 平台上线，真实服务区域运营、商业分析与管理层。</p>
+    <h1>ADA — 智能经营分析 Agent<br><em>查数据 · 找异动 · 做归因 · 出报告</em></h1>
+    <p class="lede">面向共享出行业务的智能经营分析助手：运营和管理者一句自然语言提问，ADA 完成数据查询、异动归因、目标诊断与复盘报告。已上线企业 Agent 平台，真实服务区域运营、商业分析与管理层。</p>
     <div class="meta">
       <span>角色 · 创建者 / 产品与架构设计</span>
       <span>平台 · 企业级 Agent 平台</span>
@@ -91,127 +107,118 @@
 
   <section>
     <div class="sec-tag">00 · Live Data</div>
-    <h2>平台运行数据<small>近 7 天 · 含群聊 / 私聊 / 定时任务三类入口</small></h2>
+    <h2>运行数据一览<small>近 7 天 · 群聊 / 私聊 / 定时任务三类入口</small></h2>
     <div class="metrics">
-      <div class="metric"><div class="v">100%</div><div class="k">对话成功率（523 次对话）</div></div>
-      <div class="metric"><div class="v">99.5%</div><div class="k">工具调用成功率（失败 24 · 超时 0）</div></div>
-      <div class="metric"><div class="v">0</div><div class="k">异常中断次数 / 中断率</div></div>
+      <div class="metric"><div class="v">100%</div><div class="k">对话成功率（523 次）</div></div>
+      <div class="metric"><div class="v">99.5%</div><div class="k">工具调用成功率</div></div>
+      <div class="metric"><div class="v">0</div><div class="k">异常中断</div></div>
       <div class="metric"><div class="v">92.4%</div><div class="k">Token 缓存命中率</div></div>
       <div class="metric"><div class="v">260M</div><div class="k">周 Token 消耗（约 ¥160）</div></div>
-      <div class="metric"><div class="v">6.0s</div><div class="k">首 Token P95 时延</div></div>
-      <div class="metric"><div class="v">52.2s</div><div class="k">端到端 P95（含取数与计算）</div></div>
-      <div class="metric"><div class="v">7×24</div><div class="k">含每日定时巡检任务运行</div></div>
+      <div class="metric"><div class="v">6.0s</div><div class="k">首 Token P95</div></div>
+      <div class="metric"><div class="v">52.2s</div><div class="k">端到端 P95（含取数归因）</div></div>
+      <div class="metric"><div class="v">50+</div><div class="k">日活用户 · 工具调用累计破万</div></div>
     </div>
-    <p class="metrics-note">口径说明：对话含群聊 @、私聊与定时任务触发三类入口，数据取自平台可观测面板；端到端时延包含数据源查询与归因计算，不只是模型推理。</p>
+    <p class="note">端到端时延包含数据源查询与归因计算，不只是模型推理。</p>
   </section>
 
   <section>
-    <div class="sec-tag">01 · Problem</div>
-    <h2>解决什么问题</h2>
-    <div class="grid3">
-      <div class="card"><span class="no">PAIN 01</span><h3>取数低效</h3><p>经营数据散落在多个看板、数仓与目标系统，一次完整分析需人工切换拼表 2–4 小时。</p></div>
-      <div class="card"><span class="no">PAIN 02</span><h3>归因靠个人经验</h3><p>同一个"订单为什么降"，不同分析师结论差异大，质量取决于"是谁写的"而非"方法论是否正确"。</p></div>
-      <div class="card"><span class="no">PAIN 03</span><h3>响应滞后</h3><p>发现问题 → 找分析师 → 人工排查，链路通常 T+1 起，无法支撑及时经营决策。</p></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-tag">02 · Architecture</div>
-    <h2>分层能力设计<small>按「解决什么问题」递进建设</small></h2>
-    <div class="steps">
-      <div class="step"><span class="tag">L1 · 去哪看</span><h3>数据查询层</h3><p>自然语言查数：意图识别（指标 × 时间 × 区域）→ 自动路由到正确数据源（业务看板 / SQL / 指标平台），模糊问法主动追问而非猜测。</p></div>
-      <div class="step core"><span class="tag">L2 · 为什么（核心亮点）</span><h3>分析诊断层</h3><p>异动检测 + 多维归因引擎：排除法 + 连环替代法，每个因素量化贡献度（如「天气贡献 -5.2pp」），输出结构化归因报告。</p></div>
-      <div class="step"><span class="tag">L3 · 怎么办</span><h3>决策支持层</h3><p>月度预测、节假日保障、目标拆解（大区→城市）、周/月复盘报告自动生成，形成分析闭环。</p></div>
-    </div>
-    <p style="font-size:14px;color:var(--sub);margin:-16px 0 40px;">架构模式：复用平台原生的 Skill 发现与匹配机制（非自建 Router），自定义业务 Skill 作为方法论增强层，与取数、文档、可视化等通用 Skill 协同编排。</p>
-  </section>
-
-  <section>
-    <div class="sec-tag">03 · Knowledge System</div>
-    <h2>知识库与指标图谱怎么搭<small>归因能力的地基</small></h2>
-    <p style="margin-bottom:28px;">ADA 能"讲道理"的前提，是业务知识被组织成机器可推理的结构。我分三步搭了这套知识体系。</p>
-
-    <div class="steps">
-      <div class="step core">
-        <span class="tag">STEP 1 · 指标因果图谱</span>
-        <h3>把散在脑子里的指标关系，变成显式推理规则</h3>
-        <p>先和业务专家把核心经营指标的联动逻辑梳理成一张因果图谱：指标是节点，关系是边，只保留四种类型——<b>分解</b>（数学恒等，如收入 = 可用车数 × 周转 × RPT，资产/订单/用户三种分解视角）、<b>影响</b>（统计相关，如天气分每降 10 分订单降 5–15%）、<b>抑制</b>（trade-off，如提价升 RPT 抑制订单量、加车稀释周转）、<b>传导</b>（因果链，如坏天气 → 用户数降 → 订单降 → 收入降）。图谱里同时编码了 5 条归因推理规则：天气优先排除、供给侧先于需求侧、分解关系用连环替代法量化而影响关系用基准对比估算、禁止把相关性当因果性、各因素贡献度加和须逼近总变化（误差 >5% 即判定分析有错）。</p>
-      </div>
-      <div class="step">
-        <span class="tag">STEP 2 · 协同建设机制</span>
-        <h3>让多位分析师能一起维护，且 AI 永远不写入</h3>
-        <p>图谱不能只活在一张 Excel 里。我用零代码平台搭了协同应用作为唯一数据源：指标字典、因果关系、异动规则、变更历史四张表，按 9 个业务模块（经营产出 / 用户 / 资产 / 调度 / 易得 / 用工 / 易还 / 外部因素 / 过滤指标）划分 Owner，各领域分析师只维护自己模块，跨模块关系归目标模块 Owner，行级权限控制。查询侧用嵌入式图数据库做引擎，每次查询前自动比对版本号增量同步（全量重建约 200 节点 + 500 边，2 秒内）。两条防幻觉硬约束：AI 只做格式校验、环路检测和一致性提示，<b>所有写入必须人类逐条确认</b>；每次变更自动记快照，支持任意版本回滚。</p>
-      </div>
-      <div class="step">
-        <span class="tag">STEP 3 · 策略知识库</span>
-        <h3>从"指标为什么变"走到"该怎么办"</h3>
-        <p>图谱回答归因，策略库回答行动。我把团队分析经验结构化为 8 大类异动要素（外部客观 / G 端治理 / 竞对 / 定价 / 内部产能 / 内部经营策略 / 资产状态 / 系统与工单），配套打分排序机制；再将 30+ 条分析策略编译成"策略原子"——监控范围（城市分层、重要性过滤）、对比基准（双基准、剔除天气、MTD 对齐）、异动判定（双门限、分级阈值、只判恶化）、归因分解（乘法链倒推、互斥完备分解、RPT 桥）、下钻定位与焦点呈现六类，策略之间按「收敛 → 分层 → 基准 → 判定 → 分解 → 下钻 → 收口」串成流水线。知识来源双轨：自上而下的场景 SOP 沉淀，加自下而上的真实案例与周会复盘回流。</p>
-      </div>
-      <div class="step">
-        <span class="tag">STEP 4 · 知识运营与自迭代</span>
-        <h3>让知识库复利增长，而不是一次性工程</h3>
-        <p>知识库方法论上我放弃了纯 RAG（检索无积累，每次从零拼凑），采用「原始资料只读 → LLM 增量编译 Wiki → Schema 约束行为」的三层架构：新资料通过 Ingest 整合进既有页面并维护交叉引用，Query 产出的好分析归档回库，定期 Lint 做矛盾检测、孤立页清理和健康检查——知识编译一次持续复用。Agent 自身同样按此运营：记忆分层（长期记忆容量治理 + 每日记录 + 跨会话检索），并设计了「记忆 → Skill」自迭代闭环——反复验证的经验进候选队列，定时蒸馏成 Skill 草稿，固定样本验证后人工审核、版本化发布。知识库的繁琐在于维护，人负责筛选与判断，LLM 负责其余一切。</p>
-      </div>
-    </div>
-    <p style="font-size:14px;color:var(--sub);margin:-16px 0 40px;">这套体系正在向下一代演进：将指标、关系、规则、策略进一步编译入关系型数据库（知识 13 表），由离线编译服务统一生产、治理后台审核发布，支撑 Agent 自主规划分析的通用商分能力。</p>
-  </section>
-
-  <section>
-    <div class="sec-tag">04 · Features</div>
-    <h2>核心功能点</h2>
+    <div class="sec-tag">01 · Features</div>
+    <h2>功能介绍</h2>
     <table>
-      <tr><th style="width:150px;">能力</th><th>设计要点</th></tr>
-      <tr><td>统一指标查询</td><td>单指标 / 多指标 / 跨对象对比 / 目标达成查询；每个数值标注来源，可回溯验证</td></tr>
-      <tr><td>异动归因引擎 ★</td><td>「先外后内、先大后小」：外部因素（天气/节假日）优先排除 → 供给侧 → 需求侧；拒绝模糊结论，必须量化到 pp 级贡献</td></tr>
-      <tr><td>目标管理</td><td>实际值与目标值分源获取、MTD 达成率、Gap 定位；目标按供给/天气/竞争因子拆解到城市</td></tr>
-      <tr><td>报告自动化</td><td>周/月复盘报告自动生成并发布到内部知识库，复用成熟预测与复盘管线</td></tr>
-      <tr><td>分层交互</td><td>群聊：结论先行、限长、高密级数据不展示明细；私聊：完整报告 + 多轮追问；另有每日定时巡检任务自动扫描城市指标异常</td></tr>
-      <tr><td>统一鉴权与权限管控</td><td>调用下游系统统一走 SSO 身份换票与权限校验，按对话人身份隔离、最小授权，全部调用留痕可审计——不会因 Agent 接入导致权限失控</td></tr>
+      <tr><th style="width:140px;">能力</th><th>要点</th></tr>
+      <tr><td>统一指标查询</td><td>单 / 多指标、跨对象对比、目标达成查询；数值标注来源，可回溯验证</td></tr>
+      <tr><td>异动归因引擎 ★</td><td>「先外后内、先大后小」：天气/节假日优先排除 → 供给 → 需求；量化到 pp 级贡献，拒绝模糊结论</td></tr>
+      <tr><td>目标管理</td><td>实际值与目标值分源获取、MTD 达成率、Gap 定位；目标拆解到城市</td></tr>
+      <tr><td>报告自动化</td><td>周/月复盘自动生成并发布到内部知识库；每日定时巡检城市指标异常</td></tr>
+      <tr><td>分层交互</td><td>群聊结论先行、限长、密级管控；私聊完整报告 + 多轮追问</td></tr>
+      <tr><td>统一鉴权与权限管控</td><td>下游调用统一 SSO 换票校验，按对话人身份隔离、最小授权、留痕可审计</td></tr>
     </table>
   </section>
 
   <section>
-    <div class="sec-tag">05 · Quality & Eval</div>
-    <h2>质量与评测体系<small>用户敢用的前提是它不出错</small></h2>
-    <div class="grid2">
-<div class="card hl">
-<h3>专家基准评测 · 已落地，归因一致率 92%</h3>
-<p>以<b>历史周会上专家人工识别并归因过的异动案例</b>作为 ground truth 构建评测集：让 Agent 基于案例重跑历史数据、还原当时的异动场景独立完成归因，与专家历史结论逐案比对——归因结论一致率 <b>92%</b>。标尺来自业务专家与历史数据，而非模型自评。</p>
-</div>
-<div class="card">
-<h3>六维评测框架 · 规划中（长期监控）</h3>
-<p>下一阶段建立常态化质量监控：数据查询准确性 25% · 异动归因质量 25% · 业务知识 15% · 安全合规 15% · 输出规范 10% · 交互体验 10%，每个 case 5 分制、加权 ≥3.5 合格，配套含负样本（如"未达异动阈值不应误判"）的标准测试集，每轮迭代回归评测，长期跟踪六维质量水位。</p>
-</div>
+    <div class="sec-tag">02 · Demo</div>
+    <h2>界面 Demo<small>示意对话 · 基于真实归因流程</small></h2>
+    <div class="demo">
+      <div class="demo-bar"><i></i><i></i><i></i>&nbsp;ADA · 占卜师 — 经营分析群</div>
+      <div class="msg user">成都昨天订单环比降了 8%，什么原因？</div>
+      <div class="msg bot">
+        <span class="who">ADA</span>
+        <div class="verdict"><b>结论：主因降雨，次因可用车下降。</b>环比 -8% 中，天气贡献 -5.2pp、供给贡献 -1.8pp，剩余为需求侧波动。</div>
+        <table class="mini-table">
+          <tr><th>因素</th><th>表现</th><th>贡献</th></tr>
+          <tr><td>天气（优先排除）</td><td>天气分 82 → 61，中雨</td><td>-5.2pp</td></tr>
+          <tr><td>供给侧</td><td>可用车 -3.1%（故障上升）</td><td>-1.8pp</td></tr>
+          <tr><td>需求侧（残差）</td><td>—</td><td>-1.0pp</td></tr>
+        </table>
+        <span class="src">方法：排除法 + 连环替代法 ｜ 贡献加和校验通过 ｜ 数据源：经营看板 + 天气表（T-1）</span>
+      </div>
+      <div class="msg user">那今天还会继续跌吗？</div>
+      <div class="msg bot">
+        <span class="who">ADA</span>
+        <div class="verdict"><b>会，预计再承压 3–5%。</b>降雨持续到周三；建议今日优先向商圈点位补车，对冲供给缺口。</div>
+        <span class="src">依据：天气预报 + 供给调度数据 ｜ 仅量化拆解，决策留给人</span>
+      </div>
     </div>
-    <ul class="list">
-      <li><b>口径一致性铁律</b>：订单 ↔ 收入 ↔ 客单价互为约束，修正任一变量必须重算整个三角并三方校验</li>
-      <li><b>幻觉兜底</b>：生成端与验证端不共用同一假设，结论用独立数据源交叉验证；规律用同年实测验证而非模型假设；图谱写入人类逐条确认</li>
-      <li><b>诚实边界</b>：竞对、政策等无法量化的因素如实说明，不强行凑解释；数据不确定时明说"我不确定"</li>
-      <li><b>安全红线</b>：不编造数据、不执行写操作、不访问越权数据、拒绝提示词注入</li>
-    </ul>
+    <p class="demo-tag">▲ 真实交互形态：结论先行 → 量化归因表 → 数据来源标注 → 行动建议</p>
   </section>
 
   <section>
-    <div class="sec-tag">06 · Results</div>
+    <div class="sec-tag">03 · How It Works</div>
+    <h2>实现逻辑</h2>
+
+    <h3 style="margin-bottom:8px;">① 三层能力架构</h3>
+    <div class="arch">
+      <div class="step"><span class="no">L1 · 去哪看</span><h3>数据查询</h3><p>意图识别 → 自动路由到正确数据源（看板 / SQL / 指标平台），模糊问法追问不猜测</p></div>
+      <div class="step core"><span class="no">L2 · 为什么</span><h3>归因诊断 ★</h3><p>异动检测 + 排除法 + 连环替代法，因素贡献量化到 pp 级</p></div>
+      <div class="step"><span class="no">L3 · 怎么办</span><h3>决策支持</h3><p>月度预测、目标拆解、周月复盘报告自动生成</p></div>
+    </div>
+    <p class="note" style="margin-bottom:22px;">架构模式：复用平台原生 Skill 发现与匹配（非自建 Router），自定义业务 Skill 沉淀方法论，与取数、文档、可视化 Skill 协同编排。</p>
+
+    <h3 style="margin-bottom:8px;">② 知识库与指标图谱——归因能力的地基</h3>
+    <div class="steps4">
+      <div class="step core"><span class="no">STEP 1</span><h3>指标因果图谱</h3><p>指标为节点、<b>4 种关系</b>为边（分解/影响/抑制/传导）；内嵌 <b>5 条归因推理规则</b>（天气优先、供给先于需求、相关性≠因果…）</p></div>
+      <div class="step"><span class="no">STEP 2</span><h3>协同建设机制</h3><p>零代码应用唯一数据源（<b>4 张表</b>），<b>9 模块</b> Owner 分权；<b>AI 零写入</b>，人类逐条确认 + 版本回滚</p></div>
+      <div class="step"><span class="no">STEP 3</span><h3>策略知识库</h3><p><b>30+ 策略原子</b>六类，按「收敛→分层→基准→判定→分解→下钻→收口」串成流水线</p></div>
+      <div class="step"><span class="no">STEP 4</span><h3>运营与自迭代</h3><p>弃纯 RAG，增量编译 Wiki（Ingest/Query/Lint）复利增长；「记忆 → Skill」自迭代闭环</p></div>
+    </div>
+    <p class="note" style="margin-bottom:24px;">查询引擎为嵌入式图数据库，查询前自动版本同步（约 200 节点 / 500 边，重建 &lt;2s）。</p>
+  </section>
+
+  <section>
+    <div class="sec-tag">04 · Quality & Eval</div>
+    <h2>质量与评测</h2>
+    <div class="grid2">
+      <div class="card hl">
+        <h3>专家基准评测 · 已落地，归因一致率 92%</h3>
+        <p>以历史周会专家人工归因过的异动案例为 ground truth：Agent 重跑历史数据、还原当时异动场景独立归因，与专家结论逐案比对——一致率 <b style="color:var(--accent);">92%</b>。标尺来自业务专家与历史数据，而非模型自评。</p>
+      </div>
+      <div class="card">
+        <h3>六维评测框架 · 规划中（长期监控）</h3>
+        <p>查询准确 25% · 归因质量 25% · 业务知识 15% · 安全合规 15% · 输出规范 10% · 交互体验 10%；每 case 5 分制、加权 ≥3.5 合格，含负样本测试集，每轮迭代回归、长期跟踪质量水位。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-tag">05 · Results</div>
     <h2>验证与成果</h2>
     <ul class="list">
-      <li>从 0 到 1 建设并上线企业 Agent 平台，覆盖四个业务区域 + 商业分析 + 管理层真实使用：<b>日活用户 50+，工具调用累计破万次</b>；近 7 天对话 500+ 次、成功率 100%，专家基准评测归因一致率 92%</li>
-      <li>指标因果图谱 + 协同建设机制落地：约 200 节点 / 500 边级图谱，9 模块多 Owner 协同维护，AI 零自主写入；策略原子 30+ 条结构化入库；「记忆 → Skill」自迭代闭环（候选沉淀 → 蒸馏 → 验证 → 版本化发布）完成设计并部分上线</li>
-      <li>项目目标（设定中，规模化验证中）：单次经营分析 2–4 小时 → 5 分钟内；分析覆盖从头部 10 余城扩展到全量 100+ 城市</li>
+      <li><b>0→1 上线</b>企业 Agent 平台，覆盖四个业务区域 + 商分 + 管理层：<b>日活用户 50+、工具调用累计破万</b>、近 7 天对话 500+ 次成功率 100%、归因一致率 92%</li>
+      <li><b>知识体系落地</b>：因果图谱 200 节点 / 500 边、9 模块多 Owner 协同、AI 零自主写入、策略原子 30+ 条入库</li>
+      <li><b>演进目标</b>（设定中，验证中）：单次经营分析 2–4 小时 → 5 分钟内；覆盖头部 10 余城 → 全量 100+ 城市</li>
     </ul>
-    <div class="quote">"指标异动了，ADA 告诉你原因是什么、各因素分别贡献了多少——<br>归因给出量化拆解，业务判断留给人。"</div>
   </section>
 
   <section>
-    <div class="sec-tag">07 · Capability Map</div>
+    <div class="sec-tag">06 · Capability Map</div>
     <h2>能力标签</h2>
     <div class="chips">
-      <span>分层需求设计</span><span>指标因果图谱构建</span><span>知识协同治理机制</span><span>意图路由与工具编排</span><span>归因方法论产品化</span><span>评测集构建（专家 Ground Truth）</span><span>幻觉兜底与质量回归</span><span>个性化 vs 规模化取舍</span><span>0→1 上线与真实用户迭代</span>
+      <span>分层需求设计</span><span>指标因果图谱构建</span><span>知识协同治理</span><span>意图路由与工具编排</span><span>归因方法论产品化</span><span>评测集构建（专家 Ground Truth）</span><span>幻觉兜底与质量回归</span><span>个性化 vs 规模化取舍</span><span>0→1 上线迭代</span>
     </div>
   </section>
 
   <footer>
-    ADA · 智能经营分析 Agent 作品集 — 脱敏外发版 ｜ 运行数据取自平台观测面板（近 7 天），内部平台与业务细节已做泛化处理
+    ADA · 智能经营分析 Agent 作品集 — 脱敏外发版 ｜ 运行数据取自平台观测面板（近 7 天），Demo 为示意对话；内部平台与业务细节已做泛化处理
   </footer>
 
 </main>
