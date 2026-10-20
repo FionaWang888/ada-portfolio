@@ -249,6 +249,14 @@
       <tr><td>RAG 类知识问答（主流 ChatBI 通用做法）</td><td>向量检索拼凑上下文，知识碎片化、不可版本化</td><td>ADA <b>弃纯 RAG</b>：原始资料 → Wiki → Schema 三层编译，Ingest/Query/Lint 让知识可版本化、复利增长</td></tr>
     </table>
     <p class="note" style="margin-bottom:24px;">业界头部产品验证了方向，但多数停在通用能力层；ADA 的差异化在于：把「确定性引擎 + 可治理知识 + 可验证评测」这套组合在真实生产环境跑通，并拿出 92% 归因一致率、99.5% 工具成功率、100% 对话成功率的可验证数据。</p>
+    <h3 style="margin-bottom:8px;">正在引入的业界设计（Roadmap）</h3>
+    <div class="steps4" style="margin-bottom:10px;">
+      <div class="step"><span class="no">借鉴 Cortex Analyst 语义层</span><h3>指标语义模型开放</h3><p>因果图谱升级为可复用语义层，其他 Agent、看板、报表直接调用同一套口径，一次治理全网受益</p></div>
+      <div class="step"><span class="no">借鉴 Tableau Pulse 主动洞察</span><h3>从问答到订阅</h3><p>指标波动、达成风险、归因摘要自动推送 + 个人订阅，从「人问它答」升级为「它主动找人」（定时巡检已上线）</p></div>
+      <div class="step"><span class="no">借鉴 Manus / Devin 任务规划</span><h3>计划-执行-验证循环</h3><p>复杂归因任务先输出分析计划再执行，中间步骤可观测、可干预，长任务不再黑盒</p></div>
+      <div class="step"><span class="no">借鉴 Code Interpreter 沙箱</span><h3>归因计算沙箱化</h3><p>归因与预测计算在隔离沙箱运行，杜绝误操作写数据，结果可复现、可审计</p></div>
+    </div>
+    <p class="note" style="margin-bottom:24px;">多智能体协作（借鉴 AutoGen / CrewAI 编排范式）已在 Multica 平台规划多 Agent 分工，覆盖跨业务线协同分析。</p>
   </section>
 
   <section>
