@@ -71,6 +71,19 @@
   .arch{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;}
   .arch .step p b{color:var(--accent);}
 
+  figure.shot{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:24px;}
+  figure.shot img{width:100%;border-radius:8px;display:block;}
+  figure.shot figcaption{font-size:12px;color:var(--sub);padding:8px 4px 2px;}
+  .botcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center;}
+  .bot-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#7fd6c2,#0f6b5c);color:#fff;font-family:var(--serif);font-size:20px;font-weight:600;line-height:64px;margin:0 auto 10px;}
+  .bot-name{font-size:16px;font-weight:600;}
+  .bot-tag{font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:4px;vertical-align:2px;}
+  .bot-desc{font-size:12.5px;color:var(--sub);margin:8px 0 4px;}
+  .bot-dev{font-size:12px;color:var(--sub);margin-bottom:12px;}
+  .bot-btn{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:8px 0;font-size:13px;font-weight:600;}
+  .demo-grid{grid-template-columns:300px 1fr;}
+  @media(max-width:720px){.demo-grid{grid-template-columns:1fr;}}
+
   ul.list{list-style:none;margin-bottom:24px;}
   ul.list li{position:relative;padding:7px 0 7px 22px;font-size:14px;color:#33373e;border-bottom:1px dashed var(--line);}
   ul.list li::before{content:"";position:absolute;left:3px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
@@ -94,9 +107,9 @@
   <div class="wrap">
     <div class="kicker">Portfolio · AI Data Product</div>
     <h1>ADA — 智能经营分析 Agent<br><em>查数据 · 找异动 · 做归因 · 出报告</em></h1>
-    <p class="lede">面向共享出行业务的智能经营分析助手：运营和管理者一句自然语言提问，ADA 完成数据查询、异动归因、目标诊断与复盘报告。已上线企业 Agent 平台，真实服务区域运营、商业分析与管理层。</p>
+    <p class="lede">面向共享出行业务的<b style="color:#7fd6c2;">数字员工</b>：运营和管理者一句自然语言提问，ADA 完成数据查询、异动归因、目标诊断与复盘报告。已上线企业 Agent 平台，以机器人形态真实服务区域运营、商业分析与管理层。</p>
     <div class="meta">
-      <span>角色 · 创建者 / 产品与架构设计</span>
+      <span>角色 · 数字员工</span>
       <span>平台 · 企业级 Agent 平台</span>
       <span>用户 · 区域运营 / 商业分析 / 管理层</span>
     </div>
@@ -137,8 +150,21 @@
 
   <section>
     <div class="sec-tag">02 · Demo</div>
-    <h2>界面 Demo<small>示意对话 · 基于真实归因流程</small></h2>
-    <div class="demo">
+    <h2>界面 Demo<small>真实产品形态 · 示意对话基于真实归因流程</small></h2>
+    <div class="grid2 demo-grid" style="align-items:stretch;">
+      <div class="botcard">
+        <div class="bot-avatar">Ada</div>
+        <div class="bot-name">Ada <span class="bot-tag">机器人</span></div>
+        <div class="bot-desc">如果我变笨了，请私聊我的主人或输入 /newbox 复活吧！</div>
+        <div class="bot-dev">开发者 · 王一帆</div>
+        <div class="bot-btn">💬 发消息</div>
+      </div>
+      <div class="card" style="font-size:13px;color:var(--sub);line-height:1.8;">
+        <h3 style="color:var(--ink);">产品形态：前端机器人，后端编排</h3>
+        <p><b style="color:var(--accent);">前端</b>即 IM 机器人——用户在<b>群聊 / 私聊 / 定时任务</b>三类入口直接对话，零学习成本；<b style="color:var(--accent);">后端</b>由企业 Agent 平台统一编排：机器人接收消息 → 意图识别与数据源路由 → 调用接入的<b>业务看板 / 数据平台接口</b>完成取数、目标上传等动作 → 结构化回复，全程统一鉴权与留痕。</p>
+      </div>
+    </div>
+    <div class="demo" style="margin-top:12px;">
       <div class="demo-bar"><i></i><i></i><i></i>&nbsp;ADA · 占卜师 — 经营分析群</div>
       <div class="msg user">成都昨天订单环比降了 8%，什么原因？</div>
       <div class="msg bot">
@@ -163,7 +189,23 @@
   </section>
 
   <section>
-    <div class="sec-tag">03 · How It Works</div>
+    <div class="sec-tag">03 · Practice</div>
+    <h2>AI 实践成果<small>三条端到端业务链路 · 真实截图</small></h2>
+    <p class="note" style="margin-bottom:14px;">协作模式：人定义问题和验收标准 → Skill 执行单步确定性任务 → Agent 编排多 Skill 完成端到端链路 → 最终结论由人审核确认。</p>
+    <div class="steps4" style="grid-template-columns:repeat(3,1fr);">
+      <div class="step core"><span class="no">链路一 · 预测全流程</span><h3>月度预测 → 目标拆解 → 目标上传</h3><p>天气取数 → LightGBM 预测分天订单收入 → 按节假日节奏拆解到天 → 自动上传目标平台，一句话触发。<br><b style="color:var(--accent);">MAPE&lt;5%，取数到上传 2–3 天手工流程 → 分钟级</b></p></div>
+      <div class="step core"><span class="no">链路二 · 月报全流程</span><h3>文档生成 → 数据管线 → 异动归因</h3><p>自动创建月报文档串联撰写→检查→审核→发布；批量查询达成值/MoM/YoY 回填模板；归因下钻 Top5 城市。<br><b style="color:var(--accent);">月会「一张表」由定时任务自动回填，接口直连保障准确性</b></p></div>
+      <div class="step core"><span class="no">链路三 · 人机协同</span><h3>信息收集 → 数据问答 → 预警校验</h3><p>自动收集各经营区预警提报并提醒 DDL；自然语言数据问答；用实际时序数据交叉验证自报影响合理性。<br><b style="color:var(--accent);">群内自动验收作业，人从重复沟通中解放</b></p></div>
+    </div>
+    <div class="grid2" style="margin-top:12px;">
+      <figure class="shot"><img src="assets/chat-img-1.png" alt="群聊自动验收"><figcaption>群聊内 @ADA 提交作业 → 自动核对订单 / 收入总额并回复验收结论（人名已脱敏）</figcaption></figure>
+      <figure class="shot"><img src="assets/ai-1.png" alt="月报一张表"><figcaption>月会「一张表」：批量查询 + 自动回填的月度经营数据模板（部分数据已脱敏）</figcaption></figure>
+    </div>
+    <p class="note" style="margin-bottom:24px;">Skill 资产：13 个业务 Skill 发布至企业技能广场，累计下载 493 次、调用 509 次。</p>
+  </section>
+
+  <section>
+    <div class="sec-tag">04 · How It Works</div>
     <h2>实现逻辑</h2>
 
     <h3 style="margin-bottom:8px;">① 三层能力架构</h3>
@@ -185,7 +227,7 @@
   </section>
 
   <section>
-    <div class="sec-tag">04 · Quality & Eval</div>
+    <div class="sec-tag">05 · Quality & Eval</div>
     <h2>质量与评测</h2>
     <div class="grid2">
       <div class="card hl">
@@ -200,17 +242,18 @@
   </section>
 
   <section>
-    <div class="sec-tag">05 · Results</div>
+    <div class="sec-tag">06 · Results</div>
     <h2>验证与成果</h2>
     <ul class="list">
       <li><b>0→1 上线</b>企业 Agent 平台，覆盖四个业务区域 + 商分 + 管理层：<b>日活用户 50+、工具调用累计破万</b>、近 7 天对话 500+ 次成功率 100%、归因一致率 92%</li>
+      <li><b>三条端到端链路落地</b>：预测全流程 MAPE&lt;5%、2–3 天手工流程 → 分钟级一句话触发；月报「一张表」定时任务自动回填；13 个业务 Skill 发布企业技能广场</li>
       <li><b>知识体系落地</b>：因果图谱 200 节点 / 500 边、9 模块多 Owner 协同、AI 零自主写入、策略原子 30+ 条入库</li>
       <li><b>演进目标</b>（设定中，验证中）：单次经营分析 2–4 小时 → 5 分钟内；覆盖头部 10 余城 → 全量 100+ 城市</li>
     </ul>
   </section>
 
   <section>
-    <div class="sec-tag">06 · Capability Map</div>
+    <div class="sec-tag">07 · Capability Map</div>
     <h2>能力标签</h2>
     <div class="chips">
       <span>分层需求设计</span><span>指标因果图谱构建</span><span>知识协同治理</span><span>意图路由与工具编排</span><span>归因方法论产品化</span><span>评测集构建（专家 Ground Truth）</span><span>幻觉兜底与质量回归</span><span>个性化 vs 规模化取舍</span><span>0→1 上线迭代</span>
