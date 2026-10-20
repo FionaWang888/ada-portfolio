@@ -93,6 +93,22 @@
   .modal .m-x{position:absolute;top:10px;right:14px;border:none;background:none;font-size:18px;color:var(--sub);cursor:pointer;}
   .demo-grid{grid-template-columns:300px 1fr;}
   @media(max-width:720px){.demo-grid{grid-template-columns:1fr;}}
+  .wf{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;}
+  .wf-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:12px;font-size:13.5px;}
+  .wf-legend{font-size:12px;color:var(--sub);}
+  .lg{display:inline-block;width:9px;height:9px;border-radius:50%;margin:0 4px 0 10px;vertical-align:-1px;}
+  .lg.human{background:#d97a32;}.lg.agent{background:#0f6b5c;}.lg.skill{background:#8a93a3;}
+  .wf-row{display:flex;align-items:stretch;gap:6px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;}
+  .wf-step{flex:1 0 96px;border:1px solid var(--line);border-radius:10px;padding:9px 10px;background:#fcfbf9;}
+  .wf-step b{display:block;font-size:12.5px;}
+  .wf-step em{display:block;font-style:normal;font-size:11px;color:var(--sub);line-height:1.5;margin-top:3px;}
+  .wf-no{display:inline-block;width:16px;height:16px;border-radius:50%;color:#fff;font-size:10.5px;text-align:center;line-height:16px;margin-right:5px;}
+  .wf-step.human{border-color:#e8c9a8;background:#fdf7f0;}.wf-step.human .wf-no{background:#d97a32;}
+  .wf-step.agent{border-color:#b5d9d0;background:#f0f7f5;}.wf-step.agent .wf-no{background:#0f6b5c;}
+  .wf-step.skill .wf-no{background:#8a93a3;}
+  .wf-arrow{align-self:center;color:#b8b2a6;font-size:13px;flex:0 0 auto;}
+  .wf-note{font-size:12px;color:var(--sub);margin-top:8px;}
+  .wf-note b{color:#d97a32;}
 
   ul.list{list-style:none;margin-bottom:24px;}
   ul.list li{position:relative;padding:7px 0 7px 22px;font-size:14px;color:#33373e;border-bottom:1px dashed var(--line);}
@@ -202,6 +218,30 @@
     <div class="sec-tag">03 · Practice</div>
     <h2>AI 实践成果<small>三条端到端业务链路 · 真实截图</small></h2>
     <p class="note" style="margin-bottom:14px;">协作模式：人定义问题和验收标准 → Skill 执行单步确定性任务 → Agent 编排多 Skill 完成端到端链路 → 最终结论由人审核确认。</p>
+    <div class="wf">
+      <div class="wf-head">
+        <b>工作流 Demo · 以「月度预测」链路为例</b>
+        <span class="wf-legend"><i class="lg human"></i>人 <i class="lg agent"></i>Agent <i class="lg skill"></i>Skill</span>
+      </div>
+      <div class="wf-row">
+        <div class="wf-step human"><span class="wf-no">1</span><b>下达任务</b><em>运营一句「预测本月」+ 验收口径</em></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step agent"><span class="wf-no">2</span><b>意图识别</b><em>生成执行计划，路由数据源</em></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step skill"><span class="wf-no">3</span><b>天气取数</b><em>历史 + 预报天气入模</em></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step skill"><span class="wf-no">4</span><b>模型预测</b><em>LightGBM 预测分天订单 / 收入</em></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step skill"><span class="wf-no">5</span><b>目标拆解</b><em>按节假日 / 周末节奏拆到天</em></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step skill"><span class="wf-no">6</span><b>目标上传</b><em>自动写入目标平台</em></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step human"><span class="wf-no">7</span><b>人审核</b><em>检验结果合理性，确认发布</em></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step agent"><span class="wf-no">8</span><b>持续跟进</b><em>定时任务每日播报达成率</em></div>
+      </div>
+      <div class="wf-note">人工介入点（1、7）：人只做<b>定义标准</b>和<b>审核确认</b>，中间 6 步全自动；异常时 Agent 主动回抛给人兜底，不会静默出错。</div>
+    </div>
     <div class="steps4" style="grid-template-columns:repeat(3,1fr);">
       <div class="step core"><span class="no">链路一 · 预测全流程</span><h3>月度预测 → 目标拆解 → 目标上传</h3><p>天气取数 → LightGBM 预测分天订单收入 → 按节假日节奏拆解到天 → 自动上传目标平台，一句话触发。<br><b style="color:var(--accent);">MAPE&lt;5%，取数到上传 2–3 天手工流程 → 分钟级</b></p></div>
       <div class="step core"><span class="no">链路二 · 月报全流程</span><h3>文档生成 → 数据管线 → 异动归因</h3><p>自动创建月报文档串联撰写→检查→审核→发布；批量查询达成值/MoM/YoY 回填模板；归因下钻 Top5 城市。<br><b style="color:var(--accent);">月会「一张表」由定时任务自动回填，接口直连保障准确性</b></p></div>
