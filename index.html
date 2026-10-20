@@ -133,7 +133,7 @@
   <div class="wrap">
     <div class="kicker">Portfolio · AI Data Product</div>
     <h1>ADA — 智能经营分析 Agent<br><em>查数据 · 找异动 · 做归因 · 出报告</em></h1>
-    <p class="lede">面向共享出行业务的<b style="color:#7fd6c2;">数字员工</b>：运营和管理者一句自然语言提问，ADA 完成数据查询、异动归因、目标诊断与复盘报告。已上线企业 Agent 平台，以机器人形态真实服务区域运营、商业分析与管理层。</p>
+    <p class="lede">面向共享出行业务的<b style="color:#7fd6c2;">数字员工</b>：运营和管理者一句自然语言提问，ADA 完成数据查询、异动归因、目标诊断与复盘报告。已上线企业 Agent 平台，以机器人形态真实服务业务。</p>
     <div class="meta">
       <span>角色 · 数字员工</span>
       <span>平台 · 企业级 Agent 平台</span>
@@ -187,7 +187,7 @@
       </div>
       <div class="card" style="font-size:13px;color:var(--sub);line-height:1.8;">
         <h3 style="color:var(--ink);">产品形态：前端机器人，后端编排</h3>
-        <p><b style="color:var(--accent);">前端</b>即 IM 机器人——用户在<b>群聊 / 私聊 / 定时任务</b>三类入口直接对话，零学习成本；<b style="color:var(--accent);">后端</b>由企业 Agent 平台统一编排：机器人接收消息 → 意图识别与数据源路由 → 调用接入的<b>业务看板 / 数据平台接口</b>完成取数、目标上传等动作 → 结构化回复，全程统一鉴权与留痕。</p>
+        <p><b style="color:var(--accent);">前端</b>即 IM 机器人——用户在熟悉的对话窗口直接提问，零学习成本；<b style="color:var(--accent);">后端</b>由企业 Agent 平台统一编排：接收消息 → 意图识别与数据源路由 → 调用接入的<b>业务看板 / 数据平台接口</b>完成取数、目标上传等动作 → 结构化回复，全程统一鉴权与留痕。</p>
       </div>
     </div>
     <div class="demo" style="margin-top:12px;">
@@ -251,7 +251,7 @@
       <figure class="shot"><img src="assets/chat-img-1.png" alt="群聊自动验收"><figcaption>群聊内 @ADA 提交作业 → 自动核对订单 / 收入总额并回复验收结论（人名已脱敏）</figcaption></figure>
       <figure class="shot"><img src="assets/ai-1.png" alt="月报一张表"><figcaption>月会「一张表」：批量查询 + 自动回填的月度经营数据模板（部分数据已脱敏）</figcaption></figure>
     </div>
-    <p class="note" style="margin-bottom:24px;">Skill 资产：13 个业务 Skill 发布至企业技能广场，累计下载 493 次、调用 509 次。</p>
+    <p class="note" style="margin-bottom:24px;">Skill 资产沉淀：13 个业务 Skill 发布至企业技能广场，累计下载 493 次、调用 509 次。</p>
   </section>
 
   <section>
@@ -281,11 +281,11 @@
     <h2>站在业界肩膀上，做得更落地<small>参考 Genie / Tableau Pulse / Manus / Letta 等头部 Agent 的设计范式</small></h2>
     <p class="note" style="margin-bottom:14px;">设计上参考了 Databricks Genie、Tableau Pulse、Manus、Letta（MemGPT）、AutoGen 等业界头部 Agent，但不照搬——针对骑行业务「口径乱、归因靠经验、流程靠人工」的真实痛点，做了五件更落地的事：</p>
     <ul class="list">
-      <li><b>① 用「因果图谱 + 接口取数」替代业界主流的 NL2SQL</b>——指标口径硬编码在图谱里（200 节点 / 500 边），数值必标来源可回溯，工具成功率 99.5%，规避 ChatBI 类产品普遍的幻觉与难溯源问题</li>
-      <li><b>② 把 BI 产品的「维度下钻式归因」升级为因果量化引擎</b>——排除法 + 连环替代法，贡献量化到 pp 级，5 条推理规则硬约束，专家基准评测一致率 92%</li>
-      <li><b>③ 借鉴 Manus / Devin 的端到端编排，落到生产级</b>——月度预测全流程一句话触发，取数到目标上传 2–3 天手工流程 → 分钟级，MAPE&lt;5%</li>
-      <li><b>④ 借鉴 Letta（MemGPT）记忆分层并更进一步</b>——「记忆 → Skill」自迭代闭环，好经验蒸馏验证后版本化发布为技能，13 个业务 Skill 已发布企业技能广场</li>
-      <li><b>⑤ 借鉴 AutoGen / CrewAI 多智能体但避开互传幻觉</b>——Skill 干确定性活 + Agent 编排链路 + 人审核结论，三条业务链路日稳定运行</li>
+      <li><b>① 用「因果图谱 + 接口取数」替代业界主流的 NL2SQL</b>——指标口径硬编码在图谱里，数值必标来源可回溯，规避 ChatBI 类产品普遍的幻觉与难溯源问题</li>
+      <li><b>② 把 BI 产品的「维度下钻式归因」升级为因果量化引擎</b>——不止于下钻，贡献量化到 pp 级、推理规则硬约束（评测数据见 06）</li>
+      <li><b>③ 借鉴 Manus / Devin 的端到端编排，落到生产级</b>——链路整体一句话触发、分钟级完成（见 03 工作流 Demo）</li>
+      <li><b>④ 借鉴 Letta（MemGPT）记忆分层并更进一步</b>——「记忆 → Skill」自迭代闭环，好经验蒸馏验证后版本化发布为技能</li>
+      <li><b>⑤ 借鉴 AutoGen / CrewAI 多智能体但避开互传幻觉</b>——Skill 干确定性活 + Agent 编排链路 + 人审核结论，可信与效率兼得</li>
     </ul>
     <h3 style="margin-bottom:8px;">正在引入的业界设计（Roadmap）</h3>
     <div class="steps4" style="margin-bottom:10px;">
@@ -316,10 +316,9 @@
     <div class="sec-tag">07 · Results</div>
     <h2>验证与成果</h2>
     <ul class="list">
-      <li><b>0→1 上线</b>企业 Agent 平台，覆盖四个业务区域 + 商分 + 管理层：<b>日活用户 50+、工具调用累计破万</b>、近 7 天对话 500+ 次成功率 100%、归因一致率 92%</li>
-      <li><b>三条端到端链路落地</b>：预测全流程 MAPE&lt;5%、2–3 天手工流程 → 分钟级一句话触发；月报「一张表」定时任务自动回填；13 个业务 Skill 发布企业技能广场</li>
-      <li><b>知识体系落地</b>：因果图谱 200 节点 / 500 边、9 模块多 Owner 协同、AI 零自主写入、策略原子 30+ 条入库</li>
-      <li><b>演进目标</b>（设定中，验证中）：单次经营分析 2–4 小时 → 5 分钟内；覆盖头部 10 余城 → 全量 100+ 城市</li>
+      <li><b>0→1 上线</b>企业 Agent 平台，覆盖四个业务区域 + 商分 + 管理层：<b>日活用户 50+、工具调用累计破万</b>（运行数据见 00）</li>
+      <li><b>生产级效率</b>（演进目标，设定中验证中）：单次经营分析 2–4 小时 → 5 分钟内；分析覆盖头部 10 余城 → 全量 100+ 城市</li>
+      <li><b>生态沉淀</b>：Skill 资产与知识体系随使用复利增长（规模见 03 / 04）</li>
     </ul>
   </section>
 
