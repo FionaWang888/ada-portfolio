@@ -80,7 +80,17 @@
   .bot-tag{font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:4px;vertical-align:2px;}
   .bot-desc{font-size:12.5px;color:var(--sub);margin:8px 0 4px;}
   .bot-dev{font-size:12px;color:var(--sub);margin-bottom:12px;}
-  .bot-btn{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:8px 0;font-size:13px;font-weight:600;}
+  .bot-btn{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:8px 0;font-size:13px;font-weight:600;cursor:pointer;}
+  .bot-btn:hover{background:#dcebe7;}
+  .modal-mask{display:none;position:fixed;inset:0;background:rgba(15,26,23,.55);z-index:99;align-items:center;justify-content:center;padding:24px;}
+  .modal-mask.show{display:flex;}
+  .modal{background:#fff;border-radius:16px;max-width:380px;width:100%;padding:28px 26px;text-align:center;position:relative;}
+  .modal .m-ava{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#7fd6c2,#0f6b5c);color:#fff;font-family:var(--serif);font-size:16px;font-weight:600;line-height:52px;margin:0 auto 12px;}
+  .modal h4{font-size:15.5px;margin-bottom:8px;}
+  .modal p{font-size:13px;color:var(--sub);line-height:1.7;margin-bottom:16px;}
+  .modal p b{color:var(--accent);}
+  .modal .m-close{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:9px 34px;font-size:13.5px;cursor:pointer;}
+  .modal .m-x{position:absolute;top:10px;right:14px;border:none;background:none;font-size:18px;color:var(--sub);cursor:pointer;}
   .demo-grid{grid-template-columns:300px 1fr;}
   @media(max-width:720px){.demo-grid{grid-template-columns:1fr;}}
 
@@ -157,7 +167,7 @@
         <div class="bot-name">Ada <span class="bot-tag">机器人</span></div>
         <div class="bot-desc">如果我变笨了，请私聊我的主人或输入 /newbox 复活吧！</div>
         <div class="bot-dev">开发者 · 王一帆</div>
-        <div class="bot-btn">💬 发消息</div>
+        <div class="bot-btn" onclick="document.getElementById('im-modal').classList.add('show')">💬 发消息</div>
       </div>
       <div class="card" style="font-size:13px;color:var(--sub);line-height:1.8;">
         <h3 style="color:var(--ink);">产品形态：前端机器人，后端编排</h3>
@@ -265,5 +275,15 @@
   </footer>
 
 </main>
+
+<div class="modal-mask" id="im-modal" onclick="if(event.target===this)this.classList.remove('show')">
+  <div class="modal">
+    <button class="m-x" onclick="document.getElementById('im-modal').classList.remove('show')">✕</button>
+    <div class="m-ava">Ada</div>
+    <h4>Ada 运行在企业内部环境</h4>
+    <p>对话入口在<b>美团大象 App</b> 内：打开大象，搜索 <b>Ada</b>（机器人）即可在群聊或私聊中发消息体验。本页面为脱敏作品展示，不含真实对话入口。</p>
+    <button class="m-close" onclick="document.getElementById('im-modal').classList.remove('show')">知道了</button>
+  </div>
+</div>
 </body>
 </html>
