@@ -16,7 +16,6 @@
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:860px;margin:0 auto;padding:0 32px;}
 
-  /* Hero */
   header{background:linear-gradient(160deg,#12241f 0%,#0f3b32 60%,#0f6b5c 130%);color:#f4f2ec;padding:96px 0 72px;}
   .kicker{font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#9fc4ba;margin-bottom:22px;}
   h1{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1.3;margin-bottom:18px;}
@@ -25,22 +24,22 @@
   .meta{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;}
   .meta span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 14px;color:#e4eae7;}
 
-  /* Sections */
   section{padding:64px 0 8px;}
   .sec-tag{font-size:12px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;margin-bottom:10px;}
-  h2{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:28px;}
+  h2{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:24px;}
   h2 small{font-family:var(--sans);font-size:14px;color:var(--sub);font-weight:400;margin-left:12px;}
+  h3{font-size:16px;margin-bottom:10px;}
+  p{font-size:15px;color:#3c4048;}
+  .note{font-size:13px;color:var(--sub);}
 
-  /* Cards & grids */
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;}
-  .card h3{font-size:16px;margin-bottom:10px;}
   .card p{font-size:14px;color:var(--sub);}
   .card .no{font-family:var(--serif);font-size:13px;color:var(--accent);letter-spacing:.15em;display:block;margin-bottom:12px;}
   .card.hl{border-color:var(--accent);background:var(--accent-soft);}
 
-  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:40px;}
+  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px;}
   th{background:#f2f0ec;text-align:left;padding:13px 18px;font-weight:600;font-size:13px;color:#3c4048;}
   td{padding:13px 18px;border-top:1px solid var(--line);color:#3c4048;vertical-align:top;}
   td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
@@ -50,20 +49,27 @@
   ul.list li::before{content:"";position:absolute;left:4px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--accent);}
   ul.list b{color:var(--ink);}
 
-  .layers{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
-  .layer{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;position:relative;}
-  .layer+.layer{margin-top:14px;}
-  .layer .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 10px;margin-bottom:8px;}
-  .layer h3{font-size:16px;margin-bottom:6px;}
-  .layer p{font-size:14px;color:var(--sub);}
-  .layer.core{border-color:var(--accent);background:var(--accent-soft);}
+  .steps{counter-reset:step;margin-bottom:40px;}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;position:relative;}
+  .step+.step{margin-top:14px;}
+  .step .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 10px;margin-bottom:8px;}
+  .step p{font-size:14px;color:var(--sub);}
+  .step.core{border-color:var(--accent);background:var(--accent-soft);}
+
+  /* metrics band */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px;}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px;text-align:left;}
+  .metric .v{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--accent);}
+  .metric .k{font-size:12.5px;color:var(--sub);margin-top:4px;}
+  .metrics-note{font-size:12.5px;color:var(--sub);margin-bottom:40px;}
 
   .quote{font-family:var(--serif);font-size:18px;line-height:1.9;color:#2a2e35;border-left:3px solid var(--accent);padding:6px 0 6px 22px;margin:0 0 40px;}
 
   footer{margin-top:48px;border-top:1px solid var(--line);padding:36px 0 64px;font-size:13px;color:var(--sub);}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
   .chips span{font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;color:#3c4048;}
-  @media(max-width:720px){.grid3,.grid2{grid-template-columns:1fr;}h1{font-size:34px;}}
+  @media(max-width:720px){.grid3,.grid2,.metrics{grid-template-columns:1fr 1fr;}h1{font-size:34px;}}
+  @media(max-width:480px){.grid3,.grid2,.metrics{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -71,8 +77,8 @@
 <header>
   <div class="wrap">
     <div class="kicker">Portfolio · AI Data Product</div>
-    <h1>ADA — 智能经营分析 Agent<br><em>把「分析师 + 业务参谋」装进一个对话入口</em></h1>
-    <p class="lede">面向共享出行业务的智能经营分析助手：运营和管理者用一句自然语言提问，即可完成数据查询、异动归因、目标诊断与复盘报告。从 0 到 1 建设、上线并持续迭代的真实生产环境 Agent。</p>
+    <h1>ADA — 智能经营分析 Agent<br><em>查数据、找异动、做归因、出报告</em></h1>
+    <p class="lede">面向共享出行业务的智能经营分析助手。运营和管理者一句自然语言提问，ADA 完成数据查询、异动归因、目标诊断与复盘报告。已在企业 Agent 平台上线，真实服务区域运营、商业分析与管理层。</p>
     <div class="meta">
       <span>角色 · 创建者 / 产品与架构设计</span>
       <span>平台 · 企业级 Agent 平台</span>
@@ -82,6 +88,22 @@
 </header>
 
 <main class="wrap">
+
+  <section>
+    <div class="sec-tag">00 · Live Data</div>
+    <h2>平台运行数据<small>1024 平台观测面板 · 2026-10-14 ~ 10-20 近 7 天</small></h2>
+    <div class="metrics">
+      <div class="metric"><div class="v">100%</div><div class="k">对话成功率（21 次对话）</div></div>
+      <div class="metric"><div class="v">98.9%</div><div class="k">工具调用成功率（失败 1 · 超时 0）</div></div>
+      <div class="metric"><div class="v">0</div><div class="k">异常中断次数 / 中断率</div></div>
+      <div class="metric"><div class="v">92.4%</div><div class="k">Token 缓存命中率</div></div>
+      <div class="metric"><div class="v">10.48M</div><div class="k">周 Token 消耗（约 ¥6.45）</div></div>
+      <div class="metric"><div class="v">6.0s</div><div class="k">首 Token P95 时延</div></div>
+      <div class="metric"><div class="v">52.2s</div><div class="k">端到端 P95（含取数与计算）</div></div>
+      <div class="metric"><div class="v">7×24</div><div class="k">含每日定时巡检任务运行</div></div>
+    </div>
+    <p class="metrics-note">口径说明：对话与工具数据取自平台原生可观测面板；端到端时延包含数据源查询与归因计算，不只是模型推理。ADA 同时以定时任务形式每日自动巡检城市指标异常，群聊/私聊对话为按需触发。</p>
+  </section>
 
   <section>
     <div class="sec-tag">01 · Problem</div>
@@ -96,16 +118,46 @@
   <section>
     <div class="sec-tag">02 · Architecture</div>
     <h2>分层能力设计<small>按「解决什么问题」递进建设</small></h2>
-    <div class="layers">
-      <div class="layer"><span class="tag">L1 · 去哪看</span><h3>数据查询层</h3><p>自然语言查数：意图识别（指标 × 时间 × 区域）→ 自动路由到正确数据源（业务看板 / SQL / 指标平台），模糊问法主动追问而非猜测。</p></div>
-      <div class="layer core"><span class="tag">L2 · 为什么（核心亮点）</span><h3>分析诊断层</h3><p>异动检测 + 多维归因引擎：排除法 + 连环替代法，每个因素量化贡献度（如「天气贡献 -5.2pp」），输出结构化归因报告。</p></div>
-      <div class="layer"><span class="tag">L3 · 怎么办</span><h3>决策支持层</h3><p>月度预测、节假日保障、目标拆解（大区→城市）、周/月复盘报告自动生成，形成分析闭环。</p></div>
+    <div class="steps">
+      <div class="step"><span class="tag">L1 · 去哪看</span><h3>数据查询层</h3><p>自然语言查数：意图识别（指标 × 时间 × 区域）→ 自动路由到正确数据源（业务看板 / SQL / 指标平台），模糊问法主动追问而非猜测。</p></div>
+      <div class="step core"><span class="tag">L2 · 为什么（核心亮点）</span><h3>分析诊断层</h3><p>异动检测 + 多维归因引擎：排除法 + 连环替代法，每个因素量化贡献度（如「天气贡献 -5.2pp」），输出结构化归因报告。</p></div>
+      <div class="step"><span class="tag">L3 · 怎么办</span><h3>决策支持层</h3><p>月度预测、节假日保障、目标拆解（大区→城市）、周/月复盘报告自动生成，形成分析闭环。</p></div>
     </div>
     <p style="font-size:14px;color:var(--sub);margin:-16px 0 40px;">架构模式：复用平台原生的 Skill 发现与匹配机制（非自建 Router），自定义业务 Skill 作为方法论增强层，与取数、文档、可视化等通用 Skill 协同编排。</p>
   </section>
 
   <section>
-    <div class="sec-tag">03 · Features</div>
+    <div class="sec-tag">03 · Knowledge System</div>
+    <h2>知识库与指标图谱怎么搭<small>归因能力的地基</small></h2>
+    <p style="margin-bottom:28px;">ADA 能"讲道理"的前提，是业务知识被组织成机器可推理的结构。我分三步搭了这套知识体系。</p>
+
+    <div class="steps">
+      <div class="step core">
+        <span class="tag">STEP 1 · 指标因果图谱</span>
+        <h3>把散在脑子里的指标关系，变成显式推理规则</h3>
+        <p>先和业务专家把核心经营指标的联动逻辑梳理成一张因果图谱：指标是节点，关系是边，只保留四种类型——<b>分解</b>（数学恒等，如收入 = 可用车数 × 周转 × RPT，资产/订单/用户三种分解视角）、<b>影响</b>（统计相关，如天气分每降 10 分订单降 5–15%）、<b>抑制</b>（trade-off，如提价升 RPT 抑制订单量、加车稀释周转）、<b>传导</b>（因果链，如坏天气 → 用户数降 → 订单降 → 收入降）。图谱里同时编码了 5 条归因推理规则：天气优先排除、供给侧先于需求侧、分解关系用连环替代法量化而影响关系用基准对比估算、禁止把相关性当因果性、各因素贡献度加和须逼近总变化（误差 >5% 即判定分析有错）。</p>
+      </div>
+      <div class="step">
+        <span class="tag">STEP 2 · 协同建设机制</span>
+        <h3>让多位分析师能一起维护，且 AI 永远不写入</h3>
+        <p>图谱不能只活在一张 Excel 里。我用零代码平台搭了协同应用作为唯一数据源：指标字典、因果关系、异动规则、变更历史四张表，按 9 个业务模块（经营产出 / 用户 / 资产 / 调度 / 易得 / 用工 / 易还 / 外部因素 / 过滤指标）划分 Owner，各领域分析师只维护自己模块，跨模块关系归目标模块 Owner，行级权限控制。查询侧用嵌入式图数据库做引擎，每次查询前自动比对版本号增量同步（全量重建约 200 节点 + 500 边，2 秒内）。两条防幻觉硬约束：AI 只做格式校验、环路检测和一致性提示，<b>所有写入必须人类逐条确认</b>；每次变更自动记快照，支持任意版本回滚。</p>
+      </div>
+      <div class="step">
+        <span class="tag">STEP 3 · 策略知识库</span>
+        <h3>从"指标为什么变"走到"该怎么办"</h3>
+        <p>图谱回答归因，策略库回答行动。我把团队分析经验结构化为 8 大类异动要素（外部客观 / G 端治理 / 竞对 / 定价 / 内部产能 / 内部经营策略 / 资产状态 / 系统与工单），配套打分排序机制；再将 30+ 条分析策略编译成"策略原子"——监控范围（城市分层、重要性过滤）、对比基准（双基准、剔除天气、MTD 对齐）、异动判定（双门限、分级阈值、只判恶化）、归因分解（乘法链倒推、互斥完备分解、RPT 桥）、下钻定位与焦点呈现六类，策略之间按「收敛 → 分层 → 基准 → 判定 → 分解 → 下钻 → 收口」串成流水线。知识来源双轨：自上而下的场景 SOP 沉淀，加自下而上的真实案例与周会复盘回流。</p>
+      </div>
+      <div class="step">
+        <span class="tag">STEP 4 · 知识运营与自迭代</span>
+        <h3>让知识库复利增长，而不是一次性工程</h3>
+        <p>知识库方法论上我放弃了纯 RAG（检索无积累，每次从零拼凑），采用「原始资料只读 → LLM 增量编译 Wiki → Schema 约束行为」的三层架构：新资料通过 Ingest 整合进既有页面并维护交叉引用，Query 产出的好分析归档回库，定期 Lint 做矛盾检测、孤立页清理和健康检查——知识编译一次持续复用。Agent 自身同样按此运营：记忆分层（长期记忆容量治理 + 每日记录 + 跨会话检索），并设计了「记忆 → Skill」自迭代闭环——反复验证的经验进候选队列，定时蒸馏成 Skill 草稿，固定样本验证后人工审核、版本化发布。知识库的繁琐在于维护，人负责筛选与判断，LLM 负责其余一切。</p>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--sub);margin:-16px 0 40px;">这套体系正在向下一代演进：将指标、关系、规则、策略进一步编译入关系型数据库（知识 13 表），由离线编译服务统一生产、治理后台审核发布，支撑 Agent 自主规划分析的通用商分能力。</p>
+  </section>
+
+  <section>
+    <div class="sec-tag">04 · Features</div>
     <h2>核心功能点</h2>
     <table>
       <tr><th style="width:150px;">能力</th><th>设计要点</th></tr>
@@ -113,12 +165,12 @@
       <tr><td>异动归因引擎 ★</td><td>「先外后内、先大后小」：外部因素（天气/节假日）优先排除 → 供给侧 → 需求侧；拒绝模糊结论，必须量化到 pp 级贡献</td></tr>
       <tr><td>目标管理</td><td>实际值与目标值分源获取、MTD 达成率、Gap 定位；目标按供给/天气/竞争因子拆解到城市</td></tr>
       <tr><td>报告自动化</td><td>周/月复盘报告自动生成并发布到内部知识库，复用成熟预测与复盘管线</td></tr>
-      <tr><td>分层交互</td><td>群聊：结论先行、限长、高密级数据不展示明细；私聊：完整报告 + 多轮追问</td></tr>
+      <tr><td>分层交互</td><td>群聊：结论先行、限长、高密级数据不展示明细；私聊：完整报告 + 多轮追问；另有每日定时巡检任务自动扫描城市指标异常</td></tr>
     </table>
   </section>
 
   <section>
-    <div class="sec-tag">04 · Quality & Eval</div>
+    <div class="sec-tag">05 · Quality & Eval</div>
     <h2>质量与评测体系<small>用户敢用的前提是它不出错</small></h2>
     <div class="grid2">
       <div class="card">
@@ -132,43 +184,35 @@
     </div>
     <ul class="list">
       <li><b>口径一致性铁律</b>：订单 ↔ 收入 ↔ 客单价互为约束，修正任一变量必须重算整个三角并三方校验</li>
-      <li><b>幻觉兜底</b>：生成端与验证端不共用同一假设，结论用独立数据源交叉验证；规律用同年实测验证而非模型假设</li>
+      <li><b>幻觉兜底</b>：生成端与验证端不共用同一假设，结论用独立数据源交叉验证；规律用同年实测验证而非模型假设；图谱写入人类逐条确认</li>
       <li><b>诚实边界</b>：竞对、政策等无法量化的因素如实说明，不强行凑解释；数据不确定时明说"我不确定"</li>
       <li><b>安全红线</b>：不编造数据、不执行写操作、不访问越权数据、拒绝提示词注入</li>
     </ul>
   </section>
 
   <section>
-    <div class="sec-tag">05 · Agent Engineering</div>
-    <h2>Agent 工程细节</h2>
-    <div class="grid3">
-      <div class="card"><h3>身份与边界</h3><p>三文件身份体系（身份 / 工作区规范 / 输出人格），能力白名单 + 「不能做的事」明示，不替代人做决策。</p></div>
-      <div class="card"><h3>记忆分层</h3><p>长期记忆（容量治理）+ 每日记录 + 跨会话检索三层结构，用户偏好与业务口径主动沉淀。</p></div>
-      <div class="card"><h3>Skill 工程化</h3><p>自包含 description、触发词与负样本声明、Fallback 路径、发布校验——保证路由精准与可维护性。</p></div>
-    </div>
-  </section>
-
-  <section>
     <div class="sec-tag">06 · Results</div>
     <h2>验证与成果</h2>
     <ul class="list">
-      <li>从 0 到 1 建设并上线企业 Agent 平台，覆盖四个业务区域 + 商业分析 + 管理层真实使用</li>
+      <li>从 0 到 1 建设并上线企业 Agent 平台，覆盖四个业务区域 + 商业分析 + 管理层真实使用，近 7 天对话成功率 100%、工具成功率 98.9%、零异常中断</li>
+      <li>指标因果图谱 + 协同建设机制落地：约 200 节点 / 500 边级图谱，9 模块多 Owner 协同维护，AI 零自主写入</li>
+      <li>知识体系可运营：策略原子 30+ 条结构化入库，「记忆 → Skill」自迭代闭环（候选沉淀 → 蒸馏 → 验证 → 版本化发布）完成设计并部分上线</li>
       <li>公司内部 Agent 实战大赛（11 支战队、三轮限时实战）中，归因路径获评委认可：<b>「用大盘对照砍掉季节性噪音，只留真凶」</b></li>
-      <li>项目目标（MRD 设定，规模化验证中）：单次经营分析 2–4 小时 → 5 分钟内；分析覆盖从头部 10 余城扩展到全量 100+ 城市</li>
+      <li>项目目标（设定中，规模化验证中）：单次经营分析 2–4 小时 → 5 分钟内；分析覆盖从头部 10 余城扩展到全量 100+ 城市</li>
     </ul>
-    <div class="quote">"指标异动了，Agent 告诉你原因是什么、各因素分别贡献了多少——<br>归因给出量化拆解，业务判断留给人。"</div>
+    <div class="quote">"指标异动了，ADA 告诉你原因是什么、各因素分别贡献了多少——<br>归因给出量化拆解，业务判断留给人。"</div>
   </section>
 
   <section>
     <div class="sec-tag">07 · Capability Map</div>
     <h2>能力标签</h2>
     <div class="chips">
-      <span>分层需求设计</span><span>意图路由与工具编排</span><span>归因方法论产品化</span><span>评测集构建（专家 Ground Truth）</span><span>幻觉兜底与质量回归</span><span>个性化 vs 规模化取舍</span><span>数据安全与密级分层</span><span>0→1 上线与真实用户迭代</span><span>SQL / Python 自助验证</span>
+      <span>分层需求设计</span><span>指标因果图谱构建</span><span>知识协同治理机制</span><span>意图路由与工具编排</span><span>归因方法论产品化</span><span>评测集构建（专家 Ground Truth）</span><span>幻觉兜底与质量回归</span><span>个性化 vs 规模化取舍</span><span>0→1 上线与真实用户迭代</span>
     </div>
   </section>
 
   <footer>
-    ADA · 智能经营分析 Agent 作品集 — 脱敏外发版 ｜ 内部平台与数据细节已做泛化处理
+    ADA · 智能经营分析 Agent 作品集 — 脱敏外发版 ｜ 运行数据取自平台观测面板（2026-10-14 ~ 10-20），内部平台与业务细节已做泛化处理
   </footer>
 
 </main>
