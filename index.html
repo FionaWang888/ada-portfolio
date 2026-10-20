@@ -13,8 +13,26 @@
     --sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:880px;margin:0 auto;padding:0 28px;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:rgba(250,249,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav.toc .wrap{display:flex;gap:2px;overflow-x:auto;padding:0 20px;}
+  nav.toc a{flex:0 0 auto;padding:10px 13px;font-size:12.5px;color:var(--sub);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;}
+  nav.toc a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  .metric{transition:opacity .5s ease,transform .5s ease;transition-delay:var(--d,0s);}
+  section:not(.in) .metric{opacity:0;transform:translateY(10px);}
+  section.in .msg{animation:pop .45s ease both;}
+  section.in .msg:nth-of-type(1){animation-delay:.15s;}
+  section.in .msg:nth-of-type(2){animation-delay:.45s;}
+  section.in .msg:nth-of-type(3){animation-delay:.75s;}
+  section.in .msg:nth-of-type(4){animation-delay:1.05s;}
+  @keyframes pop{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}section.in .msg{animation:none;}}
 
   header{background:linear-gradient(160deg,#12241f 0%,#0f3b32 60%,#0f6b5c 130%);color:#f4f2ec;padding:64px 0 52px;}
   .kicker{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:#9fc4ba;margin-bottom:16px;}
@@ -142,9 +160,15 @@
   </div>
 </header>
 
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">数据</a><a href="#s1">功能</a><a href="#s2">Demo</a><a href="#s3">实践</a><a href="#s4">实现逻辑</a><a href="#s5">业界对标</a><a href="#s6">评测</a><a href="#s7">成果</a><a href="#s8">能力标签</a>
+  </div>
+</nav>
+
 <main class="wrap">
 
-  <section>
+  <section id="s0">
     <div class="sec-tag">00 · Live Data</div>
     <h2>运行数据一览<small>近 7 天 · 群聊 / 私聊 / 定时任务三类入口</small></h2>
     <div class="metrics">
@@ -160,7 +184,7 @@
     <p class="note">端到端时延包含数据源查询与归因计算，不只是模型推理。</p>
   </section>
 
-  <section>
+  <section id="s1">
     <div class="sec-tag">01 · Features</div>
     <h2>功能介绍</h2>
     <table>
@@ -174,7 +198,7 @@
     </table>
   </section>
 
-  <section>
+  <section id="s2">
     <div class="sec-tag">02 · Demo</div>
     <h2>界面 Demo<small>真实产品形态 · 示意对话基于真实归因流程</small></h2>
     <div class="grid2 demo-grid" style="align-items:stretch;">
@@ -214,7 +238,7 @@
     <p class="demo-tag">▲ 真实交互形态：结论先行 → 量化归因表 → 数据来源标注 → 行动建议</p>
   </section>
 
-  <section>
+  <section id="s3">
     <div class="sec-tag">03 · Practice</div>
     <h2>AI 实践成果<small>三条端到端业务链路 · 真实截图</small></h2>
     <p class="note" style="margin-bottom:14px;">协作模式：人定义问题和验收标准 → Skill 执行单步确定性任务 → Agent 编排多 Skill 完成端到端链路 → 最终结论由人审核确认。</p>
@@ -254,7 +278,7 @@
     <p class="note" style="margin-bottom:24px;">Skill 资产沉淀：13 个业务 Skill 发布至企业技能广场，累计下载 493 次、调用 509 次。</p>
   </section>
 
-  <section>
+  <section id="s4">
     <div class="sec-tag">04 · How It Works</div>
     <h2>实现逻辑</h2>
 
@@ -276,14 +300,14 @@
     <p class="note" style="margin-bottom:24px;">查询引擎为嵌入式图数据库，查询前自动版本同步（约 200 节点 / 500 边，重建 &lt;2s）。</p>
   </section>
 
-  <section>
+  <section id="s5">
     <div class="sec-tag">05 · Benchmark</div>
     <h2>站在业界肩膀上，做得更落地<small>参考 Genie / Tableau Pulse / Manus / Letta 等头部 Agent 的设计范式</small></h2>
     <p class="note" style="margin-bottom:14px;">设计上参考了 Databricks Genie、Tableau Pulse、Manus、Letta（MemGPT）、AutoGen 等业界头部 Agent，但不照搬——针对骑行业务「口径乱、归因靠经验、流程靠人工」的真实痛点，做了五个关键设计决策（均已落地）：</p>
     <ul class="list">
       <li><b>① 用「因果图谱 + 接口取数」替代业界主流的 NL2SQL</b>——指标口径硬编码在图谱里，数值必标来源可回溯，规避 ChatBI 类产品普遍的幻觉与难溯源问题</li>
-      <li><b>② 把 BI 产品的「维度下钻式归因」升级为因果量化引擎</b>——不止于下钻，贡献量化到 pp 级、推理规则硬约束（评测数据见 06）</li>
-      <li><b>③ 借鉴 Manus / Devin 的端到端编排，落到生产级</b>——链路整体一句话触发、分钟级完成（见 03 工作流 Demo）</li>
+      <li><b>② 把 BI 产品的「维度下钻式归因」升级为因果量化引擎</b>——不止于下钻，贡献量化到 pp 级、推理规则硬约束（评测数据见 <a href="#s6">06</a>）</li>
+      <li><b>③ 借鉴 Manus / Devin 的端到端编排，落到生产级</b>——链路整体一句话触发、分钟级完成（见 <a href="#s3">03 工作流 Demo</a>）</li>
       <li><b>④ 借鉴 Letta（MemGPT）记忆分层并更进一步</b>——「记忆 → Skill」自迭代闭环，好经验蒸馏验证后版本化发布为技能</li>
       <li><b>⑤ 借鉴 AutoGen / CrewAI 多智能体但避开互传幻觉</b>——Skill 干确定性活 + Agent 编排链路 + 人审核结论，可信与效率兼得</li>
     </ul>
@@ -297,7 +321,7 @@
     <p class="note" style="margin-bottom:24px;">多智能体协作（借鉴 AutoGen / CrewAI 编排范式）已规划多 Agent 分工，覆盖跨业务线协同分析。</p>
   </section>
 
-  <section>
+  <section id="s6">
     <div class="sec-tag">06 · Quality & Eval</div>
     <h2>质量与评测</h2>
     <div class="grid2">
@@ -312,17 +336,17 @@
     </div>
   </section>
 
-  <section>
+  <section id="s7">
     <div class="sec-tag">07 · Results</div>
     <h2>验证与成果</h2>
     <ul class="list">
-      <li><b>0→1 上线</b>企业 Agent 平台，覆盖四个业务区域 + 商分 + 管理层：<b>日活用户 50+、工具调用累计破万</b>（运行数据见 00）</li>
+      <li><b>0→1 上线</b>企业 Agent 平台，覆盖四个业务区域 + 商分 + 管理层：<b>日活用户 50+、工具调用累计破万</b>（运行数据见 <a href="#s0">00</a>）</li>
       <li><b>生产级效率</b>（演进目标，设定中验证中）：单次经营分析 2–4 小时 → 5 分钟内；分析覆盖头部 10 余城 → 全量 100+ 城市</li>
-      <li><b>生态沉淀</b>：Skill 资产与知识体系随使用复利增长（规模见 03 / 04）</li>
+      <li><b>生态沉淀</b>：Skill 资产与知识体系随使用复利增长（规模见 <a href="#s3">03</a> / <a href="#s4">04</a>）</li>
     </ul>
   </section>
 
-  <section>
+  <section id="s8">
     <div class="sec-tag">08 · Capability Map</div>
     <h2>能力标签</h2>
     <div class="chips">
@@ -345,5 +369,17 @@
     <button class="m-close" onclick="document.getElementById('im-modal').classList.remove('show')">知道了</button>
   </div>
 </div>
+<script>
+(function(){
+  var sections=document.querySelectorAll('main section');
+  sections.forEach(function(s){s.classList.add('reveal');});
+  document.querySelectorAll('.metric').forEach(function(m,i){m.style.setProperty('--d',(i*0.06)+'s');});
+  if(!('IntersectionObserver' in window)){sections.forEach(function(s){s.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.08});
+  sections.forEach(function(s){io.observe(s);});
+})();
+</script>
 </body>
 </html>
